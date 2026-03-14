@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 14:03:12 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/14 15:33:17 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/14 17:12:08 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,24 +19,21 @@
 typedef struct s_list
 {
 	int				content;
-	// int	index;
 	struct s_list	*next;
-	// struct list	*prev;
-}					t_node;
 
-t_node				*ft_lstnew(int content);
-t_node				*ft_lstlast(t_node *stack_a);
-// int					ft_check_arg(char *arg);
-int					ft_lstsize(t_node *stack_a);
+}					t_node;
 void				ft_lstadd_back(t_node **lst, t_node *new);
 void				ft_lstclear(t_node **lst);
-void				ft_logic_ra(t_node **stack_a);
-// void				ft_logic_pa(t_node **stack_a, t_node **stack_b);
-// void				ft_logic_sa(t_node **stack_a);
-// void				ft_logic_sb(t_node **stack_b);
-
-// void				ft_logic_rotate(t_node **stack_a);
-// void				ft_logic_rra(t_node **stack_a);
-// void				ft_logic_pb(t_node **stack_a, t_node **stack_b);
+t_node				*ft_lstlast(t_node *stack_a);
+t_node				*ft_lstnew(int content);
+int					ft_lstsize(t_node *stack_a);
+void				rb(t_node **b);
+void				ra(t_node **a);
+void				rr(t_node **a, t_node **b);
+void				pa(t_node **stack_a, t_node **stack_b);
+void				pb(t_node **stack_b, t_node **stack_a);
+void				sa(t_node *stack_a);
+void				sb(t_node *stack_b);
+void				ss(t_node *stack_a, t_node *stack_b);
 
 #endif

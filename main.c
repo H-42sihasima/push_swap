@@ -26,7 +26,7 @@ int	main(void)
 	ft_lstadd_back(&a, ft_lstnew(5));
 	printf("before ra : ");
 	lst_print(a);
-	ft_logic_ra(&a);
+	ra(&a);
 	printf("after ra : ");
 	lst_print(a);
 	ft_lstclear(&a);

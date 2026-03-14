@@ -6,11 +6,11 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 15:09:27 by sihasima          #+#    #+#             */
-/*   Updated: 2026/02/16 17:58:46 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/14 17:14:32 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
 static int	ft_count_nb(char const *str, char c)
 {

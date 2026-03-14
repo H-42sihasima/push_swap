@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_swap.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/12 10:46:16 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/12 10:48:40 by sihasima         ###   ########.fr       */
+/*   Created: 2026/03/10 16:59:11 by sihasima          #+#    #+#             */
+/*   Updated: 2026/03/14 16:54:38 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_lstsize(t_node *stack_a)
+static void	ft_swap(t_node *stack)
 {
-	t_node	*ptr;
-	int		count;
+	int	tmp;
 
-	ptr = stack_a;
-	count = 0;
-	while (ptr != NULL)
-	{
-		count++;
-		ptr = ptr->next;
-	}
-	return (count);
+	tmp = stack->content;
+	stack->content = stack->next->content;
+	stack->next->content = tmp;
+}
+void	sa(t_node *stack_a)
+{
+	ft_swap(stack_a);
+}
+
+void	sb(t_node *stack_b)
+{
+	ft_swap(stack_b);
+}
+void	ss(t_node *stack_a, t_node *stack_b)
+{
+	sa(stack_a);
+	sb(stack_b);
 }
