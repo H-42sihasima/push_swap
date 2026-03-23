@@ -105,7 +105,7 @@ int	ft_check_atoi(long nbr)
 		number = nbr;
 	else
 	{
-		write(2, "Erro\n", 6);
+		write(2, "Error\n", 6);
 		return (0);
 	}
 	return (number);
