@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-int	*stack_to_array(t_node **stack_a)
+static int	*stack_to_array(t_node **stack_a)
 {
 	t_node *current;
 	int	*tab;
@@ -34,4 +34,12 @@ int	*stack_to_array(t_node **stack_a)
 		current = (current)->next;
 	}
 	return (tab);
+}
+static	void swap(int *a, int *b)
+{
+	int tmp;
+
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
 }
