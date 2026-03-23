@@ -91,3 +91,21 @@ void	sort_three(t_node **stack_a)
 	if ((*stack_a)->content > (*stack_a)->next->content)
 		sa(stack_a);
 }
+
+void ft_short_simple(t_node **stack_a, t_node **stack_b)
+{
+	int	stack_len;
+
+	if (!stack_a || !*stack_a || !stack_b)
+		return ;
+	stack_len = ft_lstsize(*stack_a);
+	while (stack_len > 3)
+	{
+		bring_to_top(stack_a);
+		pb(stack_a, stack_b);
+		stack_len--;
+	}
+	sort_three(stack_a);
+	while (*stack_b != NULL)
+		pa(stack_b, stack_a);
+}
