@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 17:20:10 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/24 14:05:51 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/24 14:53:44 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,7 @@ static int	*ft_stack_to_array(t_node **stack_a)
 	len = ft_lstsize(*stack_a);
 	tab = (int *)malloc(sizeof(int) * len);
 	if (!tab)
-	{
-		free(tab);
 		return (NULL);
-	}
 	i = 0;
 	current = *stack_a;
 	while (current)
@@ -48,13 +45,13 @@ static void	swap(int *a, int *b)
 	*b = tmp;
 }
 
-static void	*ft_tri_tab(int *tab, int size)
+static void	ft_tri_tab(int *tab, int size)
 {
 	int	i;
 	int	j;
 
 	if (!tab || size <= 1)
-		return (NULL);
+		return ;
 	i = 0;
 	while (i < size)
 	{
@@ -91,14 +88,12 @@ static void	ft_app_index(t_node **stack_a, int *tab, int size)
 		}
 		tmp = tmp->next;
 	}
-	free(tab);
 }
 
 void	ft_assign_indexation(t_node **stack_a)
 {
 	int	*tab;
 	int	size;
-	int	*array;
 
 	if (!stack_a || !*stack_a)
 		return ;

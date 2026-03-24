@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 17:23:05 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/19 13:56:38 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/24 14:09:28 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ static int	ft_check_digit(char *arg)
 	}
 	return (1);
 }
+
 static int	ft_check_doublons(char *arg)
 {
 	int	i;
