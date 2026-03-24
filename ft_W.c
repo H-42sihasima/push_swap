@@ -6,13 +6,13 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 16:05:47 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/24 16:37:51 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/24 16:50:14 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int ft_sqrt(int nbr)
+static int	ft_sqrt(int nbr)
 {
 	int	i;
 
@@ -24,4 +24,18 @@ static int ft_sqrt(int nbr)
 		i++;
 	}
 	return (i - 1);
+}
+
+int	ft_calcule_W(t_node **stack_a)
+{
+	float	coef;
+	int		size;
+	int		W;
+
+	if (!stack_a || !*stack_a)
+		return (0);
+	coef = 1.5;
+	size = ft_lstsize(*stack_a);
+	W = (int)(ft_sqrt(size) * coef);
+	return (W);
 }
