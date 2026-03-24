@@ -6,26 +6,12 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 17:20:10 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/24 14:01:40 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/24 14:05:51 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_lstsize(t_node *stack_a)
-{
-	t_node	*ptr;
-	int		count;
-
-	ptr = stack_a;
-	count = 0;
-	while (ptr != NULL)
-	{
-		count++;
-		ptr = ptr->next;
-	}
-	return (count);
-}
 static int	*ft_stack_to_array(t_node **stack_a)
 {
 	t_node	*current;
@@ -52,6 +38,7 @@ static int	*ft_stack_to_array(t_node **stack_a)
 	}
 	return (tab);
 }
+
 static void	swap(int *a, int *b)
 {
 	int	tmp;
