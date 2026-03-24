@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 17:20:10 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/24 13:08:16 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/24 14:01:40 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	ft_lstsize(t_node *stack_a)
 	}
 	return (count);
 }
-static int	*stack_to_array(t_node **stack_a)
+static int	*ft_stack_to_array(t_node **stack_a)
 {
 	t_node	*current;
 	int		*tab;
@@ -61,8 +61,7 @@ static void	swap(int *a, int *b)
 	*b = tmp;
 }
 
-/*tab nampiasa malloc et size = ft_lstsize(*stack_a)*/
-static int	*ft_tri_tab(int *tab, int size)
+static void	*ft_tri_tab(int *tab, int size)
 {
 	int	i;
 	int	j;
@@ -81,12 +80,11 @@ static int	*ft_tri_tab(int *tab, int size)
 		}
 		i++;
 	}
-	return (tab);
 }
 
-void	ft_app_index(t_node **stack_a, int *tab, int size)
+static void	ft_app_index(t_node **stack_a, int *tab, int size)
 {
-	t_node *tmp;
+	t_node	*tmp;
 	int		i;
 
 	if (!stack_a || !*stack_a || !tab || size <= 0)
@@ -100,11 +98,28 @@ void	ft_app_index(t_node **stack_a, int *tab, int size)
 			if (tmp->content == tab[i])
 			{
 				tmp->index = i;
-				break;
+				break ;
 			}
 			i++;
 		}
 		tmp = tmp->next;
 	}
+	free(tab);
+}
+
+void	ft_assign_indexation(t_node **stack_a)
+{
+	int	*tab;
+	int	size;
+	int	*array;
+
+	if (!stack_a || !*stack_a)
+		return ;
+	size = ft_lstsize(*stack_a);
+	tab = ft_stack_to_array(stack_a);
+	if (!tab)
+		return ;
+	ft_tri_tab(tab, size);
+	ft_app_index(stack_a, tab, size);
 	free(tab);
 }

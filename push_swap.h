@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 13:20:16 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/19 14:07:25 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/24 14:01:30 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ void				pb(t_node **stack_b, t_node **stack_a);
 void				sa(t_node *stack_a);
 void				sb(t_node *stack_b);
 void				ss(t_node *stack_a, t_node *stack_b);
+
+void				ft_assign_indexation(t_node **stack_a);
 
 #endif
