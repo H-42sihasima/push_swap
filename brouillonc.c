@@ -10,7 +10,7 @@ int	main(void)
 	a = &c;
 	b = &d;
 	printf("%d | %d\n", c, d);
-	swap(a, b);
 	printf("%d | %d", c, d);
+	swap(a, b);
 	return (0);
 }

@@ -3,15 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_aff_index.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sihasima <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 17:20:10 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/23 17:20:18 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/24 10:59:26 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static int	ft_lstsize(t_node *stack_a)
+{
+	t_node	*ptr;
+	int		count;
+
+	ptr = stack_a;
+	count = 0;
+	while (ptr != NULL)
+	{
+		count++;
+		ptr = ptr->next;
+	}
+	return (count);
+}
 static int	*stack_to_array(t_node **stack_a)
 {
 	t_node *current;
@@ -24,7 +38,10 @@ static int	*stack_to_array(t_node **stack_a)
 	len = ft_lstsize(*stack_a);
 	tab = (int *)malloc(sizeof(int) * len);
 	if (!tab)
+	{
+		free(tab);
 		return (NULL);
+	}
 	i = 0;
 	current = *stack_a;
 	while (current)
@@ -42,4 +59,27 @@ static	void swap(int *a, int *b)
 	tmp = *a;
 	*a = *b;
 	*b = tmp;
+}
+
+/*tab nampiasa malloc et size = ft_lstsize(*stack_a)*/
+static int	*ft_tri_tab(int	*tab, int size)
+{
+	int	i;
+	int	j;
+
+	if (!tab || size <= 1)
+		return (NULL);
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (j < size - 1)
+		{
+			if (tab[j] > tab[j + 1])
+				swap(&tab[j + 1], &tab[j]);
+			j++;
+		}
+		i++;
+	}
+	return (tab);
 }
