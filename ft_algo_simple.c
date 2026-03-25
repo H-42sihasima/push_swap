@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_algo.c                                          :+:      :+:    :+:   */
+/*   ft_algo_simple.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 13:49:22 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/21 17:46:49 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/25 16:24:52 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ int	ft_find_min(t_node *stack_a)
 	}
 	return (min);
 }
-int	ft_get_min_index(t_node *stack_a)
+int	ft_get_min_index(t_node *stack_a, int min_value)
 {
 	int		index;
-	int		min_value;
+	//int		min_value;
 	t_node	*tmp;
 
 	if (!stack_a)
 		return (0);
-	min_value = ft_find_min(stack_a);
+	//min_value = ft_find_min(stack_a);
 	tmp = stack_a;
 	index = 0;
 	while (tmp != NULL)
@@ -50,17 +50,17 @@ int	ft_get_min_index(t_node *stack_a)
 	return (0);
 }
 
-void	bring_to_top(t_node **stack_a)
+void	bring_to_top(t_node **stack_a, int min_value, int index)
 {
 	int	min_value;
 	int	taille;
-	int	index;
+	//int	index;
 	int	mid;
 
 	if (!stack_a || !*stack_a)
 		return ;
-	min_value = ft_find_min(*stack_a);
-	index = ft_get_min_index(*stack_a);
+	//min_value = ft_find_min(*stack_a);
+	//index = ft_get_min_index(*stack_a);
 	taille = ft_lstsize(*stack_a);
 	mid = taille / 2;
 	while ((*stack_a)->content != min_value)
@@ -95,13 +95,17 @@ void	sort_three(t_node **stack_a)
 void ft_short_simple(t_node **stack_a, t_node **stack_b)
 {
 	int	stack_len;
+	int	min_value;
+	int	index;
 
 	if (!stack_a || !*stack_a || !stack_b)
 		return ;
 	stack_len = ft_lstsize(*stack_a);
+	min_value = ft_find_min(stack_a);
+	index = ft_get_min_index(*stack_a, min_value);
 	while (stack_len > 3)
 	{
-		bring_to_top(stack_a);
+		bring_to_top(stack_a, min_value, index);
 		pb(stack_a, stack_b);
 		stack_len--;
 	}
