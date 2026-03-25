@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 13:49:22 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/25 16:24:52 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/25 16:33:46 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_find_min(t_node *stack_a)
 	}
 	return (min);
 }
-int	ft_get_min_index(t_node *stack_a, int min_value)
+int	ft_get_index(t_node *stack_a, int min_value)
 {
 	int		index;
 	//int		min_value;
@@ -102,7 +102,7 @@ void ft_short_simple(t_node **stack_a, t_node **stack_b)
 		return ;
 	stack_len = ft_lstsize(*stack_a);
 	min_value = ft_find_min(stack_a);
-	index = ft_get_min_index(*stack_a, min_value);
+	index = ft_get_index(*stack_a, min_value);
 	while (stack_len > 3)
 	{
 		bring_to_top(stack_a, min_value, index);
