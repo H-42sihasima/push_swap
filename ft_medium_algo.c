@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 16:53:08 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/26 14:08:38 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/26 14:34:05 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,4 +91,15 @@ void	ft_push_to_a(t_node **stack_b, t_node **stack_a)
 		bring_to_top(stack_b, max);
 		pa(stack_b, stack_a);
 	}
+}
+
+void	ft_medium_algo(t_node **stack_a, t_node **stack_b)
+{
+	int	W;
+
+	if (!stack_a || !*stack_a || !stack_b)
+		return ;
+	W = ft_calcule_W(stack_a);
+	ft_push_to_b(stack_a, stack_b, W);
+	ft_push_to_a(stack_b, stack_a);
 }
