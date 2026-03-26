@@ -6,21 +6,21 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 16:53:08 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/25 17:57:40 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/26 13:35:33 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_find_max(t_node **stack_b)
+int	ft_find_max(t_node **stack_a)
 {
 	t_node	*tmp;
 	int		max;
 
-	if (!stack_b || !*stack_b)
+	if (!stack_a || !*stack_a)
 		return (0);
-	tmp = (*stack_b)->next;
-	max = (*stack_b)->content;
+	tmp = (*stack_a)->next;
+	max = (*stack_a)->content;
 	while (tmp != NULL)
 	{
 		if (tmp->content > max)
@@ -29,31 +29,27 @@ int	ft_find_max(t_node **stack_b)
 	}
 	return (max);
 }
-/*	aff_index
-	ft_W
-	W = ft_calcul_W(stack_a);
-*/
 
-void	bring_to_top(t_node **stack_b, int index_max, int valeur_max)
+void	bring_to_top(t_node **stack_a, int valeur_max)
 {
 	int	taille;
 	int	mid;
+	int	index_max;
 
-	// int	index;
-	if (!stack_b || !*stack_b)
+	if (!stack_a || !*stack_a)
 		return ;
-	// min_value = ft_find_min(*stack_a);
-	// index = ft_get_min_index(*stack_a);
-	taille = ft_lstsize(*stack_b);
+	taille = ft_lstsize(*stack_a);
 	mid = taille / 2;
-	while ((*stack_b)->index != valeur_max)
+	while ((*stack_a)->content != valeur_max)
 	{
-		if ((*stack_b)->index <= mid)
-			rb(stack_b);
+		index_max = ft_get_index(stack_a, valeur_max);
+		if (index_max <= mid)
+			ra(stack_a);
 		else
-			rrb(stack_b);
+			rra(stack_a);
 	}
 }
+
 void	ft_push_to_B(t_node **stack_a, t_node **stack_b, int W)
 {
 	int	i;
@@ -63,7 +59,7 @@ void	ft_push_to_B(t_node **stack_a, t_node **stack_b, int W)
 		return ;
 	ft_assign_indexation(stack_a);
 	i = 0;
-	while (*stack_a)
+	while (ft_lstsize(*stack_a) > 3)
 	{
 		indice = (*stack_a)->index;
 		if (indice <= i)
@@ -80,20 +76,19 @@ void	ft_push_to_B(t_node **stack_a, t_node **stack_b, int W)
 		else
 			ra(stack_a);
 	}
+	sort_three(stack_a);
 }
 
 void	ft_push_to_A(t_node **stack_b, t_node **stack_a)
 {
 	int	max;
-	int	index_max;
 
-	if (!stack_b || !*stack_b)
+	if (!stack_b || !*stack_b || !stack_a)
 		return ;
 	while (*stack_b)
 	{
 		max = ft_find_max(stack_b);
-		index_max = ft_get_index(stack_b, max);
-		bring_to_top(stack_b, index_max, max);
+		bring_to_top(stack_b, max);
 		pa(stack_b, stack_a);
 	}
 }

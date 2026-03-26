@@ -29,7 +29,7 @@ int	ft_find_min(t_node *stack_a)
 	}
 	return (min);
 }
-int	ft_get_index(t_node *stack_a, int min_value)
+int	ft_get_index(t_node *stack_a, int value)
 {
 	int		index;
 	//int		min_value;
@@ -42,7 +42,7 @@ int	ft_get_index(t_node *stack_a, int min_value)
 	index = 0;
 	while (tmp != NULL)
 	{
-		if (tmp->content == min_value)
+		if (tmp->content == value)
 			return (index);
 		tmp = tmp->next;
 		index++;
