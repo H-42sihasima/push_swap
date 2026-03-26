@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 16:53:08 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/26 13:35:33 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/26 14:08:38 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	bring_to_top(t_node **stack_a, int valeur_max)
 	}
 }
 
-void	ft_push_to_B(t_node **stack_a, t_node **stack_b, int W)
+void	ft_push_to_b(t_node **stack_a, t_node **stack_b, int W)
 {
 	int	i;
 	int	indice;
@@ -79,7 +79,7 @@ void	ft_push_to_B(t_node **stack_a, t_node **stack_b, int W)
 	sort_three(stack_a);
 }
 
-void	ft_push_to_A(t_node **stack_b, t_node **stack_a)
+void	ft_push_to_a(t_node **stack_b, t_node **stack_a)
 {
 	int	max;
 
