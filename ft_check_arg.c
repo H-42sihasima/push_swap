@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 17:23:05 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/28 17:10:23 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/28 17:14:30 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,12 +98,17 @@ static long	ft_atoi(char *arg)
 	return (res * sign);
 }
 
-int	ft_check_atoi(long nbr)
+int	ft_check_atoi(long arg)
 {
 	int	number;
 
-	if (nbr <= 2147483647 && nbr >= -2147483648)
-		number = nbr;
+	if (!ft_atoi(arg))
+	{
+		write(2, "Error\n", 6);
+		return (0);
+	}
+	if (arg <= 2147483647 && arg >= -2147483648)
+		number = arg;
 	else
 	{
 		write(2, "Error\n", 6);
