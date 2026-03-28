@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 17:23:05 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/25 17:57:36 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/28 17:10:23 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static int	ft_check_doublons(char *arg)
 	return (1);
 }
 
-static long	ft_atoi(char *str)
+static long	ft_atoi(char *arg)
 {
 	int		i;
 	int		sign;
@@ -79,20 +79,20 @@ static long	ft_atoi(char *str)
 
 	sign = 1;
 	res = 0;
-	if (!ft_check_doublons(str))
+	if (!ft_check_doublons(arg))
 		return (0);
 	i = 0;
-	while ((str[i] >= '\t' && str[i] <= '\r') || (str[i] == ' '))
+	while ((arg[i] >= '\t' && arg[i] <= '\r') || (arg[i] == ' '))
 		i++;
-	if ((str[i] == '-') || (str[i] == '+'))
+	if ((arg[i] == '-') || (arg[i] == '+'))
 	{
-		if (str[i] == '-')
+		if (arg[i] == '-')
 			sign = -sign;
 		i++;
 	}
-	while ((str[i] >= '0' && str[i] <= '9'))
+	while ((arg[i] >= '0' && arg[i] <= '9'))
 	{
-		res = (res * 10) + ((long)str[i] - '0');
+		res = (res * 10) + ((long)arg[i] - '0');
 		i++;
 	}
 	return (res * sign);
