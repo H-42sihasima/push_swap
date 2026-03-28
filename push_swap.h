@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/19 13:20:16 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/26 14:18:02 by sihasima         ###   ########.fr       */
+/*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
+/*   Updated: 2026/03/28 15:39:19 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ void				ft_lstclear(t_node **lst);
 t_node				*ft_lstlast(t_node *stack_a);
 t_node				*ft_lstnew(int content);
 int					ft_lstsize(t_node *stack_a);
+char				**ft_split(char const *s, char c);
+char				*ft_substr(char const *s, unsigned int start, size_t len);
+size_t				ft_strlen(const char *str);
 void				rb(t_node **b);
 void				ra(t_node **a);
 void				rr(t_node **a, t_node **b);
