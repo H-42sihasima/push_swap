@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 15:06:16 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/28 17:04:32 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/30 11:15:16 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,6 @@ char	**ft_xf_argv(int argc, char **argv)
 	int		len;
 	char	**tmp;
 	char	**tab;
-
-
 
 	i = 1;
 	j = 0;

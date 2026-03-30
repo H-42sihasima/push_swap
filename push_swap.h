@@ -47,4 +47,6 @@ void				bring_to_top(t_node **stack_a, int index_max);
 int					ft_get_index(t_node *stack_a, int value);
 void				ft_medium_algo(t_node **stack_a, t_node **stack_b);
 
+int					ft_find_max_bits(t_node *stack_a);
+
 #endif
