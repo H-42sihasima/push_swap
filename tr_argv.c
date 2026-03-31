@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 13:34:03 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/31 15:53:07 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/31 16:30:25 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,37 +44,43 @@ static int count_argv(int argc, char **argv, int c)
 	}
 	return (count);
 }
-
-char	**ft_xf_argv(int argc, char **argv)
+char **transf(int argc, char **tab,  char **argv, int len)
 {
-	int		i;
-	int		k;
-	int		i;
-	int		len;
-	char	**tmp;
-	char	**tab;
+	int k;
+	int i;
+	int	j;
+	char **tmp;
 
 	i = 1;
-	i = 0;
-	len = ft_order_len(argv);
-	tab = (char **)malloc(sizeof(char *) * (len + 1));
-	if (!tab)
-		return (NULL);
+	j = 0;
 	while (i < argc)
 	{
 		tmp = ft_split(argv[i], ' ');
-		k = 0;
 		if (!tmp)
-			return (NULL);
+			return (NULL) ;
+		k = 0;
 		while (tmp[k])
 		{
-			tab[i] = tmp[k];
-			i++;
+			tab[j] = tmp[k];
+			j++;
 			k++;
 		}
 		free(tmp);
 		i++;
 	}
-	tab[i] = NULL;
+	tab[j] = NULL;
 	return (tab);
+}
+char **ft_argv_to_tab(int argc, char **argv, int c)
+{
+	int		len;
+	char	**tab;
+
+	if (argc < 2)
+		return (NULL);
+	len = count_argv(argc, argv, c);
+	tab = (char **)malloc(sizeof(char *) * (len + 1));
+	if (!tab)
+		return (NULL);
+	return (transf(argc, tab, argv, len));
 }
