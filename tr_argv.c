@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/28 15:06:16 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/30 11:15:16 by sihasima         ###   ########.fr       */
+/*   Created: 2026/03/31 13:34:03 by sihasima          #+#    #+#             */
+/*   Updated: 2026/03/31 13:34:07 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*compter le nombre dans l argv*/
-static int		ft_count_argv(char *argv, int c)
+static int	ft_count_argv(char *argv, int c)
 {
 	int	i;
 	int	count;
@@ -49,7 +49,7 @@ static int	ft_order_len(char **argv)
 char	**ft_xf_argv(int argc, char **argv)
 {
 	int		i;
-	int 	k;
+	int		k;
 	int		j;
 	int		len;
 	char	**tmp;
@@ -79,4 +79,3 @@ char	**ft_xf_argv(int argc, char **argv)
 	tab[j] = NULL;
 	return (tab);
 }
-
