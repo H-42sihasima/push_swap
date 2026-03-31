@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 13:34:03 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/31 16:30:25 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/31 16:32:13 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_count_words(char *argv, int c)
 	return (count);
 }
 
-static int count_argv(int argc, char **argv, int c)
+static int	count_argv(int argc, char **argv, int c)
 {
 	int	i;
 	int	count;
@@ -44,12 +44,12 @@ static int count_argv(int argc, char **argv, int c)
 	}
 	return (count);
 }
-char **transf(int argc, char **tab,  char **argv, int len)
+char	**transf(int argc, char **tab, char **argv, int len)
 {
-	int k;
-	int i;
-	int	j;
-	char **tmp;
+	int		k;
+	int		i;
+	int		j;
+	char	**tmp;
 
 	i = 1;
 	j = 0;
@@ -57,7 +57,7 @@ char **transf(int argc, char **tab,  char **argv, int len)
 	{
 		tmp = ft_split(argv[i], ' ');
 		if (!tmp)
-			return (NULL) ;
+			return (NULL);
 		k = 0;
 		while (tmp[k])
 		{
@@ -71,7 +71,7 @@ char **transf(int argc, char **tab,  char **argv, int len)
 	tab[j] = NULL;
 	return (tab);
 }
-char **ft_argv_to_tab(int argc, char **argv, int c)
+char	**ft_argv_to_tab(int argc, char **argv, int c)
 {
 	int		len;
 	char	**tab;
