@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:29:17 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/31 11:56:34 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/31 11:58:14 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ static void	utils(t_node **stack_a, t_node **stack_b, int max_bits)
 	int	i;
 	int len_stack;
 
-	j = 0;
 	if (!stack_a || !*stack_a || !stack_b)
 		return ;
 	i = 0;
@@ -50,11 +49,10 @@ static void	utils(t_node **stack_a, t_node **stack_b, int max_bits)
 			j++;
 		}
 		while (*stack_b)
-		pa(stack_b, stack_a);
+			pa(stack_b, stack_a);
 		i++;
 	}
 }
-
 void complex_algo(t_node **stack_a, t_node **stack_b)
 {
 	int	max_bits;
