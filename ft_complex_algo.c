@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:29:17 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/31 11:53:50 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/03/31 11:56:34 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,6 @@ int	ft_find_max_bits(t_node **stack_a)
 	while (max_index >> bits != 0)
 		bits++;
 	return (bits);
-}
-
-static void	empty_stack_b(t_node **stack_a, t_node**stack_b)
-{
-	if (!stack_a || !stack_b || !*stack_b)
-		return ;
-	while (*stack_b)
-		pa(stack_b, stack_a);
 }
 static void	utils(t_node **stack_a, t_node **stack_b, int max_bits)
 {
@@ -57,7 +49,8 @@ static void	utils(t_node **stack_a, t_node **stack_b, int max_bits)
 				ra(stack_a);
 			j++;
 		}
-		empty_stack_b(stack_a, stack_b);
+		while (*stack_b)
+		pa(stack_b, stack_a);
 		i++;
 	}
 }
