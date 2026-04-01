@@ -5,41 +5,48 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2026/04/01 13:21:40 by sihasima          #+#    #+#              #
-#    Updated: 2026/04/01 13:42:10 by sihasima         ###   ########.fr        #
+#    Created: 2026/02/13 16:25:06 by sihasima          #+#    #+#              #
+#    Updated: 2026/02/16 15:12:13 by sihasima         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=push_swap.a
+NAME = libft.a
 
-CC=cc
+CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS=\
-	ft_aff_index.c  ft_algo_simple.c  ft_check_arg.c \
-	ft_complex_algo.c  ft_logic_rotate.c  ft_medium_algo.c \
-	ft_once_utils.c  ft_push.c  ft_split.c  ft_strlen.c\
-	ft_substr.c  ft_swap.c  ft_tab_to_stack.c \
-	ft_utils.c \
-	ft_W.c ft_tr_argv.c \
+SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c\
+ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c\
+ft_strchr.c ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c\
+ft_substr.c ft_strjoin.c ft_strtrim.c ft_itoa.c ft_strmapi.c ft_striteri.c\
+ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c\
+ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_split.c\
 
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-HEADER=push_swap.h
+HEADER=libft.h
 
 $(NAME): $(OBJS) $(HEADER)
-		ar rcs $(NAME) $(OBJS)
+	ar rcs $(NAME) $(OBJS)
 
 %.o: %.c
-		$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
-		rm -f $(OBJS)
+	rm -f $(OBJS)
 
 fclean: clean
-		rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 
 .PHONY: all clean fclean re
+
+
+
+
+
+
+

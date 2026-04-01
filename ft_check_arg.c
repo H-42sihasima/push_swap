@@ -11,34 +11,45 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	ft_check_digit(char *arg)
+#include "push_swap.h"
+
+int	ft_check_digit(char *arg)
 {
 	int	i;
 
-	i = 0;
-	if (arg[i] == '-' || arg[i] == '+')
-		i++;
 	if (!arg)
 		return (0);
+	i = 0;
+	while (arg[i] == ' ')
+		i++;
+	if (arg[i] == '-' || arg[i] == '+')
+	{
+		if ((arg[i + 1] >= '0' && arg[i + 1] <= '9'))
+			i++;
+		else
+			return (0);
+	}
 	while (arg[i])
 	{
-		if (arg[i] < '0' && arg[i] > '9')
+		if (!(arg[i] >= '0' && arg[i] <= '9'))
 			return (0);
 		i++;
 	}
 	return (1);
 }
-static long	ft_atoi(char *arg)
+
+static long long	ft_atoi(char *arg)
 {
 	int		i;
 	int		sign;
-	long	res;
+	long	long res;
 
 	sign = 1;
 	res = 0;
-	if (!ft_check_digit(arg))
-		return (0);
+
 	i = 0;
+	if (!arg)
+		return (0);
 	while ((arg[i] >= '\t' && arg[i] <= '\r') || (arg[i] == ' '))
 		i++;
 	if ((arg[i] == '-') || (arg[i] == '+'))
@@ -55,50 +66,44 @@ static long	ft_atoi(char *arg)
 	return (res * sign);
 }
 
-int	ft_check_atoi(long arg)
+static int	ft_check_atoi(long long arg)
 {
 	int	number;
 
-	if (!ft_atoi(arg))
+	if (!(arg <= 2147483647 && arg >= -2147483648))
 	{
-		write(2, "Error\n", 6);
-		return (0);
+		write (2, "Erro\n", 6);
+		exit(1);
 	}
-	if (arg <= 2147483647 && arg >= -2147483648)
-		number = arg;
 	else
-	{
-		write(2, "Error\n", 6);
-		return (0);
-	}
+		number = arg;
 	return (number);
 }
 
-static int	ft_check_doublons(char *arg)
+/*len_int = count_argv(argc, argv, ' ')*/
+static int	ft_check_doublons(int *arg, int len_int)
 {
 	int	i;
 	int	j;
 
-	if (!ft_check_digit(arg))
-		return (0);
 	i = 0;
-	while (arg[i])
+	while (i < len_int)
 	{
-		if (arg[i] == '-' || arg[i] == '+')
-			i++;
 		j = i + 1;
-		while (arg[j])
+		while (j < len_int)
 		{
-			if (arg[i] != arg[j])
-				j++;
-			else
-			{
-				write(2, "Error\n", 6);
+			if (arg[i] == arg[j])
 				return (0);
-			}
 			j++;
 		}
 		i++;
 	}
 	return (1);
 }
+/* a mettre dans la derniere fonction (synthese):
+		if (!ft_check_digit(arg))
+		{
+			write (2, "Error\n", 6);
+			exit(1);
+}
+*/

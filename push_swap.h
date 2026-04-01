@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/31 12:21:39 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/01 15:06:06 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+#include "Libft/libft.h"
 
 typedef struct s_list
 {
@@ -40,6 +41,8 @@ void				sa(t_node *stack_a);
 void				sb(t_node *stack_b);
 void				ss(t_node *stack_a, t_node *stack_b);
 
+int					count_argv(int argc, char **argv, int c);
+
 void				ft_assign_indexation(t_node **stack_a);
 int					ft_calcule_W(t_node **stack_a);
 int					ft_find_min(t_node *stack_a);
@@ -48,6 +51,6 @@ int					ft_get_index(t_node *stack_a, int value);
 void				ft_medium_algo(t_node **stack_a, t_node **stack_b);
 
 int					ft_find_max_bits(t_node **stack_a);
-void complex_algo(t_node **stack_a, t_node **stack_b);
+void 				complex_algo(t_node **stack_a, t_node **stack_b);
 
 #endif

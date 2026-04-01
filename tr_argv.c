@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 13:34:03 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/31 16:32:13 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/01 11:52:01 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ static int	ft_count_words(char *argv, int c)
 	}
 	return (count);
 }
-
-static int	count_argv(int argc, char **argv, int c)
+int	count_argv(int argc, char **argv, int c)
 {
 	int	i;
 	int	count;
@@ -44,7 +43,7 @@ static int	count_argv(int argc, char **argv, int c)
 	}
 	return (count);
 }
-char	**transf(int argc, char **tab, char **argv, int len)
+static char	**transf(int argc, char **tab, char **argv, int len)
 {
 	int		k;
 	int		i;

@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/19 11:58:10 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/28 15:38:46 by sihasima         ###   ########.fr       */
+/*   Created: 2026/02/16 15:47:11 by sihasima          #+#    #+#             */
+/*   Updated: 2026/02/16 15:47:18 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-size_t	ft_strlen(const char *str)
+int	ft_isalnum(int c)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
+	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	return (0);
 }
