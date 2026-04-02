@@ -12,28 +12,30 @@
 
 #include "push_swap.h"
 
-static void	ft_swap(t_node *stack)
+static void	ft_swap(t_node **stack)
 {
 	int	tmp;
 
-	tmp = stack->content;
-	stack->content = stack->next->content;
-	stack->next->content = tmp;
+	if (!stack || !(*stack)->next)
+		return ;
+	tmp = (*stack)->content;
+	(*stack)->content = (*stack)->next->content;
+	(*stack)->next->content = tmp;
 }
-void	sa(t_node *stack_a)
+void	sa(t_node **stack_a)
 {
 	ft_swap(stack_a);
 	write (1, "sa\n", 3);
 }
 
-void	sb(t_node *stack_b)
+void	sb(t_node **stack_b)
 {
 	ft_swap(stack_b);
 	write (1, "sb\n", 3);
 }
-void	ss(t_node *stack_a, t_node *stack_b)
+void	ss(t_node **stack_a, t_node **stack_b)
 {
-	sa(stack_a);
-	sb(stack_b);
+	ft_swap(stack_a);
+	ft_swap(stack_b);
 	write (1, "ss\n", 3);
 }

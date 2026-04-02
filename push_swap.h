@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/01 15:06:06 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/02 14:22:07 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,16 @@ void				pb(t_node **stack_b, t_node **stack_a);
 void				sa(t_node *stack_a);
 void				sb(t_node *stack_b);
 void				ss(t_node *stack_a, t_node *stack_b);
+void				rra(t_node **stack_a);
+void 				rrb(t_node **stack_b);
+void				rrr(t_node **stack_a, t_node **stack_b);
 
 int					count_argv(int argc, char **argv, int c);
 
 void				ft_assign_indexation(t_node **stack_a);
 int					ft_calcule_W(t_node **stack_a);
 int					ft_find_min(t_node *stack_a);
-void				bring_to_top(t_node **stack_a, int index_max);
+void				bring_to_top(t_node **stack_a, int min_value, int index);
 int					ft_get_index(t_node *stack_a, int value);
 void				ft_medium_algo(t_node **stack_a, t_node **stack_b);
 

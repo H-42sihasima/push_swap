@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 13:49:22 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/26 14:09:51 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/02 13:24:57 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int	ft_get_index(t_node *stack_a, int value)
 
 void	bring_to_top(t_node **stack_a, int min_value, int index)
 {
-	int	min_value;
 	int	taille;
 	int	mid;
 

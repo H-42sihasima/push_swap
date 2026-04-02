@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/23 17:20:10 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/24 14:53:44 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/02 13:22:46 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ static int	*ft_stack_to_array(t_node **stack_a)
 	current = *stack_a;
 	while (current)
 	{
-		tab[i] = (current)->content;
+		tab[i] = current->content;
 		i++;
-		current = (current)->next;
+		current = current->next;
 	}
 	return (tab);
 }
