@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 13:34:03 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/01 11:52:01 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/02 14:58:37 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	count_argv(int argc, char **argv, int c)
 	}
 	return (count);
 }
-static char	**transf(int argc, char **tab, char **argv, int len)
+static char	**transf(int argc, char **tab, char **argv)
 {
 	int		k;
 	int		i;
@@ -81,5 +81,5 @@ char	**ft_argv_to_tab(int argc, char **argv, int c)
 	tab = (char **)malloc(sizeof(char *) * (len + 1));
 	if (!tab)
 		return (NULL);
-	return (transf(argc, tab, argv, len));
+	return (transf(argc, tab, argv));
 }
