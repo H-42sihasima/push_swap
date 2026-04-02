@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 13:49:22 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/02 13:24:57 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/02 14:38:31 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void ft_short_simple(t_node **stack_a, t_node **stack_b)
 	if (!stack_a || !*stack_a || !stack_b)
 		return ;
 	stack_len = ft_lstsize(*stack_a);
-	min_value = ft_find_min(stack_a);
+	min_value = ft_find_min(*stack_a);
 	index = ft_get_index(*stack_a, min_value);
 	while (stack_len > 3)
 	{
