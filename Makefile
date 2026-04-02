@@ -6,7 +6,7 @@
 #    By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/04/01 13:21:40 by sihasima          #+#    #+#              #
-#    Updated: 2026/04/02 14:56:59 by sihasima         ###   ########.fr        #
+#    Updated: 2026/04/02 16:53:16 by sihasima         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror
 SRCS=\
 	ft_aff_index.c  ft_algo_simple.c  ft_check_arg.c \
 	ft_complex_algo.c  ft_logic_rotate.c  ft_medium_algo.c \
-	ft_push.c \
+	ft_push.c ft_tab_to_stack.c\
 	ft_substr.c  ft_swap.c \
 	ft_utils.c \
 	ft_W.c  tr_argv.c \
