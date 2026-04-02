@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/02 14:36:07 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/02 14:49:30 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,10 @@ void				rra(t_node **stack_a);
 void 				rrb(t_node **stack_b);
 void				rrr(t_node **stack_a, t_node **stack_b);
 
+long long			ft_atoi(char *arg);
+int					ft_check_atoi(long long arg);
+int					ft_check_doublons(int *arg, int len_int);
+
 int					count_argv(int argc, char **argv, int c);
 
 void				ft_assign_indexation(t_node **stack_a);
@@ -52,6 +56,7 @@ int					ft_find_min(t_node *stack_a);
 void				bring_to_top(t_node **stack_a, int min_value, int index);
 int					ft_get_index(t_node *stack_a, int value);
 void				ft_medium_algo(t_node **stack_a, t_node **stack_b);
+void				sort_three(t_node **stack_a);
 
 int					ft_find_max_bits(t_node **stack_a);
 void 				complex_algo(t_node **stack_a, t_node **stack_b);

@@ -38,7 +38,7 @@ int	ft_check_digit(char *arg)
 	return (1);
 }
 
-static long long	ft_atoi(char *arg)
+long long	ft_atoi(char *arg)
 {
 	int		i;
 	int		sign;
@@ -66,7 +66,7 @@ static long long	ft_atoi(char *arg)
 	return (res * sign);
 }
 
-static int	ft_check_atoi(long long arg)
+int	ft_check_atoi(long long arg)
 {
 	int	number;
 
@@ -81,7 +81,7 @@ static int	ft_check_atoi(long long arg)
 }
 
 /*len_int = count_argv(argc, argv, ' ')*/
-static int	ft_check_doublons(int *arg, int len_int)
+int	ft_check_doublons(int *arg, int len_int)
 {
 	int	i;
 	int	j;

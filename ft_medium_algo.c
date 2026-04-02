@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 16:53:08 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/26 14:34:05 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/02 14:47:58 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_find_max(t_node **stack_a)
 	return (max);
 }
 
-void	bring_to_top(t_node **stack_a, int valeur_max)
+static void	ft_bring_to_top(t_node **stack_a, int valeur_max)
 {
 	int	taille;
 	int	mid;
@@ -42,7 +42,7 @@ void	bring_to_top(t_node **stack_a, int valeur_max)
 	mid = taille / 2;
 	while ((*stack_a)->content != valeur_max)
 	{
-		index_max = ft_get_index(stack_a, valeur_max);
+		index_max = ft_get_index(*stack_a, valeur_max);
 		if (index_max <= mid)
 			ra(stack_a);
 		else
@@ -88,7 +88,7 @@ void	ft_push_to_a(t_node **stack_b, t_node **stack_a)
 	while (*stack_b)
 	{
 		max = ft_find_max(stack_b);
-		bring_to_top(stack_b, max);
+		ft_bring_to_top(stack_b, max);
 		pa(stack_b, stack_a);
 	}
 }
