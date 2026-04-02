@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/02 14:22:07 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/02 14:36:07 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ void				ra(t_node **a);
 void				rr(t_node **a, t_node **b);
 void				pa(t_node **stack_a, t_node **stack_b);
 void				pb(t_node **stack_b, t_node **stack_a);
-void				sa(t_node *stack_a);
-void				sb(t_node *stack_b);
-void				ss(t_node *stack_a, t_node *stack_b);
+void				sa(t_node **stack_a);
+void				sb(t_node **stack_b);
+void				ss(t_node **stack_a, t_node **stack_b);
 void				rra(t_node **stack_a);
 void 				rrb(t_node **stack_b);
 void				rrr(t_node **stack_a, t_node **stack_b);
