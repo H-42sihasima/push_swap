@@ -50,6 +50,8 @@ long long	ft_atoi(char *arg)
 	i = 0;
 	if (!arg)
 		return (0);
+	if (!ft_check_digit(arg))
+		return (0);
 	while ((arg[i] >= '\t' && arg[i] <= '\r') || (arg[i] == ' '))
 		i++;
 	if ((arg[i] == '-') || (arg[i] == '+'))
