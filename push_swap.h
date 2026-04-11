@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/11 12:52:42 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/11 13:10:01 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,5 @@ int					ft_find_max_bits(t_node **stack_a);
 void				complex_algo(t_node **stack_a, t_node **stack_b);
 
 float				compute_disorder(t_node *stack_a);
+void				ft_adaptive(t_node **stack_a, t_node **stack_b);
 #endif
