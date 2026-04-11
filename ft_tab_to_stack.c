@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 15:58:34 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/03 15:11:04 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/11 12:46:32 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_node *ft_stack(int argc, char **argv, t_node **stack_a)
 {
 	int	i;
 	int	taille;
-	char *tab;
+	int *tab;
 
 	if (!stack_a)
 		return (NULL);
@@ -46,8 +46,8 @@ t_node *ft_stack(int argc, char **argv, t_node **stack_a)
 	i = 0;
 	while (i < taille)
 	{
-		tab_to_stack(stack_a, tab[i], taille);
+		tab_to_stack(stack_a, &tab[i], taille);
 		i++;
 	}
-	return (stack_a);
+	return (*stack_a);
 }

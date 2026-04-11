@@ -6,16 +6,16 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/11 12:13:00 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/11 12:52:42 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "Libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
-#include "Libft/libft.h"
 
 typedef struct s_list
 {
@@ -42,17 +42,19 @@ void				sa(t_node **stack_a);
 void				sb(t_node **stack_b);
 void				ss(t_node **stack_a, t_node **stack_b);
 void				rra(t_node **stack_a);
-void 				rrb(t_node **stack_b);
+void				rrb(t_node **stack_b);
 void				rrr(t_node **stack_a, t_node **stack_b);
 
 long long			ft_atoi(char *arg);
 int					ft_check_atoi(long long arg);
 int					ft_check_doublons(int *arg, int len_int);
 char				**ft_argv_to_tab(int argc, char **argv, int c);
-void 				tab_to_stack(t_node **stack, int *tab, int taille);
+void				tab_to_stack(t_node **stack, int *tab, int taille);
 
 int					count_argv(int argc, char **argv, int c);
-t_node 				*ft_stack(int argc, char **argv, t_node **stack_a);
+t_node				*ft_stack(int argc, char **argv, t_node **stack_a);
+
+int					*ft_convert_tab(int argc, char **argv);
 
 void				ft_assign_indexation(t_node **stack_a);
 int					ft_calcule_W(t_node **stack_a);
@@ -63,7 +65,7 @@ void				ft_medium_algo(t_node **stack_a, t_node **stack_b);
 void				sort_three(t_node **stack_a);
 
 int					ft_find_max_bits(t_node **stack_a);
-void 				complex_algo(t_node **stack_a, t_node **stack_b);
+void				complex_algo(t_node **stack_a, t_node **stack_b);
 
-float	compute_disorder(t_node *stack_a);
+float				compute_disorder(t_node *stack_a);
 #endif
