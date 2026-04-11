@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/10 14:02:34 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/25 14:58:28 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/11 13:25:18 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ static void	ft_push(t_node **a, t_node **b)
 	tmp->next = *b;
 	(*b) = tmp;
 }
+
 void	pa(t_node **stack_b, t_node **stack_a)
 {
 	ft_push(stack_b, stack_a);
 	write (1, "pa\n", 3);
 }
+
 void	pb(t_node **stack_a, t_node **stack_b)
 {
 	ft_push(stack_a, stack_b);

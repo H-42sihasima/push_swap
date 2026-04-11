@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/11 13:10:01 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/11 13:40:16 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,11 @@ void				tab_to_stack(t_node **stack, int *tab, int taille);
 int					count_argv(int argc, char **argv, int c);
 t_node				*ft_stack(int argc, char **argv, t_node **stack_a);
 
+void				ft_short_simple(t_node **stack_a, t_node **stack_b);
 int					*ft_convert_tab(int argc, char **argv);
 
 void				ft_assign_indexation(t_node **stack_a);
-int					ft_calcule_W(t_node **stack_a);
+int					ft_calcule_w(t_node **stack_a);
 int					ft_find_min(t_node *stack_a);
 void				bring_to_top(t_node **stack_a, int min_value, int index);
 int					ft_get_index(t_node *stack_a, int value);

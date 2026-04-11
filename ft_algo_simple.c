@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 13:49:22 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/02 14:38:31 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/11 14:01:23 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	ft_find_min(t_node *stack_a)
 	}
 	return (min);
 }
+
 int	ft_get_index(t_node *stack_a, int value)
 {
 	int		index;
@@ -69,24 +70,25 @@ void	bring_to_top(t_node **stack_a, int min_value, int index)
 void	sort_three(t_node **stack_a)
 {
 	int	top;
-	int	Middle;
-	int	Bottom;
+	int	middle;
+	int	bottom;
 
-	if (!stack_a || !*stack_a || !((*stack_a)->next) || !((*stack_a)->next->next))
+	if (!stack_a || !*stack_a)
+		return ;
+	if (!(*stack_a)->next || !((*stack_a)->next->next))
 		return ;
 	top = (*stack_a)->content;
-	Middle = (*stack_a)->next->content;
-	Bottom = (*stack_a)->next->next->content;
-	if (top > Middle && top > Bottom)
+	middle = (*stack_a)->next->content;
+	bottom = (*stack_a)->next->next->content;
+	if (top > middle && top > bottom)
 		ra(stack_a);
-	else if (top < Middle && Middle > Bottom)
+	else if (top < middle && middle > bottom)
 		rra(stack_a);
-
 	if ((*stack_a)->content > (*stack_a)->next->content)
 		sa(stack_a);
 }
 
-void ft_short_simple(t_node **stack_a, t_node **stack_b)
+void	ft_short_simple(t_node **stack_a, t_node **stack_b)
 {
 	int	stack_len;
 	int	min_value;

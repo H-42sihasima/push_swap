@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 16:53:08 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/02 14:47:58 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/11 13:36:57 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void	ft_bring_to_top(t_node **stack_a, int valeur_max)
 	}
 }
 
-void	ft_push_to_b(t_node **stack_a, t_node **stack_b, int W)
+void	ft_push_to_b(t_node **stack_a, t_node **stack_b, int w)
 {
 	int	i;
 	int	indice;
@@ -68,7 +68,7 @@ void	ft_push_to_b(t_node **stack_a, t_node **stack_b, int W)
 			i++;
 			rb(stack_b);
 		}
-		else if (indice < i + W)
+		else if (indice < i + w)
 		{
 			pb(stack_a, stack_b);
 			i++;
@@ -95,11 +95,11 @@ void	ft_push_to_a(t_node **stack_b, t_node **stack_a)
 
 void	ft_medium_algo(t_node **stack_a, t_node **stack_b)
 {
-	int	W;
+	int	w;
 
 	if (!stack_a || !*stack_a || !stack_b)
 		return ;
-	W = ft_calcule_W(stack_a);
-	ft_push_to_b(stack_a, stack_b, W);
+	w = ft_calcule_w(stack_a);
+	ft_push_to_b(stack_a, stack_b, w);
 	ft_push_to_a(stack_b, stack_a);
 }

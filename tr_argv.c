@@ -6,14 +6,13 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 13:34:03 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/02 14:58:37 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/11 13:33:26 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*char * est un espace , avec int c = ' '(espace) */
-
 static int	ft_count_words(char *argv, int c)
 {
 	int	i;
@@ -29,6 +28,7 @@ static int	ft_count_words(char *argv, int c)
 	}
 	return (count);
 }
+
 int	count_argv(int argc, char **argv, int c)
 {
 	int	i;
@@ -43,6 +43,7 @@ int	count_argv(int argc, char **argv, int c)
 	}
 	return (count);
 }
+
 static char	**transf(int argc, char **tab, char **argv)
 {
 	int		k;
@@ -70,6 +71,7 @@ static char	**transf(int argc, char **tab, char **argv)
 	tab[j] = NULL;
 	return (tab);
 }
+
 char	**ft_argv_to_tab(int argc, char **argv, int c)
 {
 	int		len;

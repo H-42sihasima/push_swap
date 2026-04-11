@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 16:05:47 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/24 16:50:14 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/11 13:35:28 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,16 @@ static int	ft_sqrt(int nbr)
 	return (i - 1);
 }
 
-int	ft_calcule_W(t_node **stack_a)
+int	ft_calcule_w(t_node **stack_a)
 {
 	float	coef;
 	int		size;
-	int		W;
+	int		w;
 
 	if (!stack_a || !*stack_a)
 		return (0);
 	coef = 1.5;
 	size = ft_lstsize(*stack_a);
-	W = (int)(ft_sqrt(size) * coef);
-	return (W);
+	w = (int)(ft_sqrt(size) * coef);
+	return (w);
 }

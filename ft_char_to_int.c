@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 14:45:54 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/11 12:50:00 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/11 13:18:46 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	*ft_convert_tab(int argc, char **argv)
 {
-	int *tab;
-	int size;
+	int	*tab;
+	int	size;
 	int	i;
 
 	size = count_argv(argc, argv, ' ');
@@ -26,7 +26,7 @@ int	*ft_convert_tab(int argc, char **argv)
 	while (i < size)
 	{
 		tab[i] = ft_atoi(argv[i]);
-		if (!ft_check_atoi((long long)argv[i]));
+		if (!ft_check_atoi((long long)argv[i]))
 			return (NULL);
 		i++;
 	}

@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 13:34:18 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/31 13:34:30 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/11 13:20:50 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +39,12 @@ int	ft_check_digit(char *arg)
 
 long long	ft_atoi(char *arg)
 {
-	int		i;
-	int		sign;
-	long	long res;
+	int			i;
+	int			sign;
+	long long	res;
 
 	sign = 1;
 	res = 0;
-
 	i = 0;
 	if (!arg)
 		return (0);

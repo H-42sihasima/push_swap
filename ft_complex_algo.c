@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -7,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:29:17 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/31 12:21:08 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/11 13:22:49 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +27,12 @@ int	ft_find_max_bits(t_node **stack_a)
 		bits++;
 	return (bits);
 }
+
 static void	utils(t_node **stack_a, t_node **stack_b, int max_bits)
 {
 	int	j;
 	int	i;
-	int len_stack;
+	int	len_stack;
 
 	if (!stack_a || !*stack_a || !stack_b)
 		return ;
@@ -54,7 +54,8 @@ static void	utils(t_node **stack_a, t_node **stack_b, int max_bits)
 		i++;
 	}
 }
-void complex_algo(t_node **stack_a, t_node **stack_b)
+
+void	complex_algo(t_node **stack_a, t_node **stack_b)
 {
 	int	max_bits;
 

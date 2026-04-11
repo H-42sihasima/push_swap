@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 12:55:20 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/11 13:08:26 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/11 13:14:10 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_adaptive(t_node **stack_a, t_node **stack_b)
 {
 	float	disorder;
-	
+
 	if (!stack_a || !*stack_a || !stack_b)
 		return ;
 	disorder = compute_disorder(*stack_a);

@@ -6,16 +6,16 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 15:58:34 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/11 12:46:32 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/11 13:27:03 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void tab_to_stack(t_node **stack, int *tab, int taille)
+void	tab_to_stack(t_node **stack, int *tab, int taille)
 {
-	int	i;
-	t_node *pile;
+	int		i;
+	t_node	*pile;
 
 	if (!stack)
 		return ;
@@ -33,11 +33,11 @@ void tab_to_stack(t_node **stack, int *tab, int taille)
 	}
 }
 
-t_node *ft_stack(int argc, char **argv, t_node **stack_a)
+t_node	*ft_stack(int argc, char **argv, t_node **stack_a)
 {
 	int	i;
 	int	taille;
-	int *tab;
+	int	*tab;
 
 	if (!stack_a)
 		return (NULL);

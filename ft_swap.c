@@ -22,6 +22,7 @@ static void	ft_swap(t_node **stack)
 	(*stack)->content = (*stack)->next->content;
 	(*stack)->next->content = tmp;
 }
+
 void	sa(t_node **stack_a)
 {
 	ft_swap(stack_a);
@@ -33,6 +34,7 @@ void	sb(t_node **stack_b)
 	ft_swap(stack_b);
 	write (1, "sb\n", 3);
 }
+
 void	ss(t_node **stack_a, t_node **stack_b)
 {
 	ft_swap(stack_a);
