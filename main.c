@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_adaptive.c                                      :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/11 12:55:20 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/13 15:46:43 by sihasima         ###   ########.fr       */
+/*   Created: 2026/04/13 15:49:20 by sihasima          #+#    #+#             */
+/*   Updated: 2026/04/13 16:11:31 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_adaptive(t_node *stack_a, t_config *config)
+int main(int argc, char **argv)
 {
-	float	disorder;
+	/*le parsing et autre...*/
+	t_config *config;
+	t_node	**stack_a;
+	t_node	**stack_b;
 
-	if (!stack_a || !config)
-		return ;
-	disorder = compute_disorder(stack_a);
-	config->disorder = (double)disorder;
-	if (disorder < 0.2)
-		config->strat = STRAT_SIMPLE;
-	else if (0.2 <= disorder && disorder < 0.5)
-		config->strat = STRAT_MEDIUM;
+	if (config->strat = STRAT_ADAPTIVE)
+		ft_adaptive(*stack_a, config);
+	else if (config->strat = STRAT_SIMPLE)
+		ft_short_simple(stack_a, stack_b);
+	else if (config->strat = STRAT_MEDIUM)
+		ft_medium_algo(stack_a, stack_a);
 	else
-		config->strat = STRAT_COMPLEX;
+		complex_algo(stack_a, stack_b);
 }

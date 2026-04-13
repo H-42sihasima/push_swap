@@ -1,29 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_adaptive.c                                      :+:      :+:    :+:   */
+/*   config.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/11 12:55:20 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/13 15:46:43 by sihasima         ###   ########.fr       */
+/*   Created: 2026/04/13 14:10:54 by sihasima          #+#    #+#             */
+/*   Updated: 2026/04/13 14:22:10 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_adaptive(t_node *stack_a, t_config *config)
+void	init_config(t_config *config)
 {
-	float	disorder;
-
-	if (!stack_a || !config)
-		return ;
-	disorder = compute_disorder(stack_a);
-	config->disorder = (double)disorder;
-	if (disorder < 0.2)
-		config->strat = STRAT_SIMPLE;
-	else if (0.2 <= disorder && disorder < 0.5)
-		config->strat = STRAT_MEDIUM;
-	else
-		config->strat = STRAT_COMPLEX;
+	ft_memset(config, 0, sizeof(t_config));
+	config->strat = STRAT_ADAPTIVE;
+	config->bench_mode = 0;
 }

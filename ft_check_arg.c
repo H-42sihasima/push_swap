@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 13:34:18 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/11 13:20:50 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/11 14:08:48 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	ft_check_atoi(long long arg)
 
 	if (!(arg <= 2147483647 && arg >= -2147483648))
 	{
-		write (2, "Erro\n", 6);
+		write (2, "Error\n", 6);
 		exit(1);
 	}
 	else

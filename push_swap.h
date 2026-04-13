@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/11 13:40:16 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/13 15:24:03 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,34 @@ typedef struct s_list
 	int				index;
 	struct s_list	*next;
 
-}					t_node;
+}t_node;
+
+typedef enum s_stategy {
+	STRAT_SIMPLE,
+	STRAT_MEDIUM,
+	STRAT_COMPLEX,
+	STRAT_ADAPTIVE
+} t_stategy;
+
+typedef struct s_strategy {
+	t_stategy 	strat; //la strategie choisie
+	int			bench_mode; //1 si l'utilisateur a tape --bench, sinon 0
+	double		disorder;// pour stocker le % de desordre
+
+	/*les compteurs pour le mode --bench*/
+	int		count_sa;
+	int		count_sb;
+	int		count_pa;
+	int		count_pb;
+	int		count_ra;
+	int		count_rb;
+	int		count_rra;
+	int		count_rrb;
+	int		total_op;
+} t_config;
+
+void				init_config(t_config *config);
+
 void				ft_lstadd_back(t_node **lst, t_node *new);
 void				ft_lstclear(t_node **lst);
 t_node				*ft_lstlast(t_node *stack_a);
@@ -69,5 +96,5 @@ int					ft_find_max_bits(t_node **stack_a);
 void				complex_algo(t_node **stack_a, t_node **stack_b);
 
 float				compute_disorder(t_node *stack_a);
-void				ft_adaptive(t_node **stack_a, t_node **stack_b);
+void				ft_adaptive(t_node *stack_a, t_config *config);
 #endif
