@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 12:01:01 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/14 15:41:52 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/14 15:55:58 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	error_exit(t_node **stack_a)
 	exit(1);
 }
 
-void error(char *arg)
+void aff_error(char *arg)
 {
 	write(2, "Error\n", 6);
 	exit(1);

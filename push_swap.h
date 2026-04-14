@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/14 15:33:39 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/14 15:56:52 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ int					ft_check_atoi(long long arg);
 int					ft_check_doublons(int *arg, int len_int);
 char				**ft_argv_to_tab(int argc, char **argv, int c);
 void				tab_to_stack(t_node **stack, int *tab, int taille);
+void 				aff_error(char *arg);
 
 int					count_argv(int argc, char **argv, int c);
 t_node				*ft_stack(int argc, char **array, t_node **stack_a);

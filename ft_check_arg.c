@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 13:34:18 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/14 15:54:27 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/14 15:56:17 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_check_digit(char *arg)
 	int	i;
 
 	if (!arg)
-		error(arg);
+		aff_error(arg);
 	i = 0;
 	while (arg[i] == ' ')
 		i++;
@@ -26,12 +26,12 @@ int	ft_check_digit(char *arg)
 		if ((arg[i + 1] >= '0' && arg[i + 1] <= '9'))
 			i++;
 		else
-			error(arg);
+			aff_error(arg);
 	}
-	while (arg[i] != NULL)
+	while (arg[i])
 	{
 		if (!(arg[i] >= '0' && arg[i] <= '9'))
-			error(arg);
+			aff_error(arg);
 		i++;
 	}
 	return (1);
@@ -47,9 +47,9 @@ long long	ft_atoi(char *arg)
 	res = 0;
 	i = 0;
 	if (!arg)
-		error(arg);
+		aff_error(arg);
 	if (!ft_check_digit(arg))
-		error(arg);
+		aff_error(arg);
 	while ((arg[i] >= '\t' && arg[i] <= '\r') || (arg[i] == ' '))
 		i++;
 	if ((arg[i] == '-') || (arg[i] == '+'))
