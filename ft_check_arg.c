@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 13:34:18 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/11 14:08:48 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/14 15:54:27 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_check_digit(char *arg)
 	int	i;
 
 	if (!arg)
-		return (0);
+		error(arg);
 	i = 0;
 	while (arg[i] == ' ')
 		i++;
@@ -26,12 +26,12 @@ int	ft_check_digit(char *arg)
 		if ((arg[i + 1] >= '0' && arg[i + 1] <= '9'))
 			i++;
 		else
-			return (0);
+			error(arg);
 	}
-	while (arg[i])
+	while (arg[i] != NULL)
 	{
 		if (!(arg[i] >= '0' && arg[i] <= '9'))
-			return (0);
+			error(arg);
 		i++;
 	}
 	return (1);
@@ -47,9 +47,9 @@ long long	ft_atoi(char *arg)
 	res = 0;
 	i = 0;
 	if (!arg)
-		return (0);
+		error(arg);
 	if (!ft_check_digit(arg))
-		return (0);
+		error(arg);
 	while ((arg[i] >= '\t' && arg[i] <= '\r') || (arg[i] == ' '))
 		i++;
 	if ((arg[i] == '-') || (arg[i] == '+'))
@@ -93,17 +93,13 @@ int	ft_check_doublons(int *arg, int len_int)
 		while (j < len_int)
 		{
 			if (arg[i] == arg[j])
-				return (0);
+			{
+				write(2, "Error\n", 6);
+				exit(1);
+			}
 			j++;
 		}
 		i++;
 	}
 	return (1);
 }
-/* a mettre dans la derniere fonction (synthese):
-		if (!ft_check_digit(arg))
-		{
-			write (2, "Error\n", 6);
-			exit(1);
-}
-*/

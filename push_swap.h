@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/14 15:24:23 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/14 15:33:39 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,4 +103,6 @@ void				complex_algo(t_node **stack_a, t_node **stack_b, t_config *config);
 
 float				compute_disorder(t_node *stack_a);
 void				ft_adaptive(t_node *stack_a, t_config *config);
+
+t_node				*parse_input(int argc, char **argv);
 #endif
