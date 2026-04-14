@@ -6,13 +6,13 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 14:45:54 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/14 13:00:29 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/14 13:54:08 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*ft_convert_tab(int argc, char **argv, int size)
+int	*ft_convert_tab(int argc, char **array, int size)
 {
 	int	*tab;
 	int	size;
@@ -24,7 +24,7 @@ int	*ft_convert_tab(int argc, char **argv, int size)
 	i = 0;
 	while (i < size)
 	{
-		tab[i] = ft_atoi(argv[i]);
+		tab[i] = ft_atoi(array[i]);
 		if (!ft_check_atoi((long long)tab[i]))
 			return (NULL);
 		i++;
@@ -32,13 +32,13 @@ int	*ft_convert_tab(int argc, char **argv, int size)
 	return (tab);
 }
 
-int	*ft_tab(int argc, char **argv, int size)
+int	*ft_tab(int argc, char **array, int size)
 {
 	int i;
 	int *tab;
 
 	i = 0;
-	tab = ft_convert_tab(argc, argv, size);
+	tab = ft_convert_tab(argc, array, size);
 	while (i < argc)
 	{
 		if (!ft_check_doublons(tab, size))
