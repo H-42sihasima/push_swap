@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/14 14:00:26 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/14 15:24:23 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_strategy {
 	/*les compteurs pour le mode --bench*/
 	int		count_sa;
 	int		count_sb;
+	int		count_ss;
 	int		count_pa;
 	int		count_pb;
 	int		count_ra;
@@ -60,16 +61,16 @@ char				**ft_split(char const *s, char c);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 size_t				ft_strlen(const char *str);
 char				**ft_split(char const *s, char c);
-void				rb(t_node **b);
-void				ra(t_node **a);
+void				ra(t_node **a, t_config *config);
+void				rb(t_node **b, t_config *config);
 void				rr(t_node **a, t_node **b);
-void				pa(t_node **stack_a, t_node **stack_b);
-void				pb(t_node **stack_b, t_node **stack_a);
-void				sa(t_node **stack_a);
-void				sb(t_node **stack_b);
-void				ss(t_node **stack_a, t_node **stack_b);
-void				rra(t_node **stack_a);
-void				rrb(t_node **stack_b);
+void				pa(t_node **stack_a, t_node **stack_b, t_config *t_config);
+void				pb(t_node **stack_b, t_node **stack_a, t_config *t_config);
+void				sa(t_node **stack_a, t_config *config);
+void				sb(t_node **stack_b, t_config *config);
+void				ss(t_node **stack_a, t_node **stack_b, t_config *config);
+void				rra(t_node **stack_a, t_config *config);
+void				rrb(t_node **stack_b, t_config *config);
 void				rrr(t_node **stack_a, t_node **stack_b);
 
 long long			ft_atoi(char *arg);
@@ -81,20 +82,24 @@ void				tab_to_stack(t_node **stack, int *tab, int taille);
 int					count_argv(int argc, char **argv, int c);
 t_node				*ft_stack(int argc, char **array, t_node **stack_a);
 
-void				ft_short_simple(t_node **stack_a, t_node **stack_b);
+void				ft_short_simple(t_node **stack_a, t_node **stack_b, t_config *config);
 int					*ft_convert_tab(int argc, char **array, int size);
 int					*ft_tab(int argc, char **argv, int size);
 
 void				ft_assign_indexation(t_node **stack_a);
 int					ft_calcule_w(t_node **stack_a);
 int					ft_find_min(t_node *stack_a);
-void				bring_to_top(t_node **stack_a, int min_value, int index);
+void				bring_to_top(t_node **stack_a, int min_value, int index, t_config *config);
 int					ft_get_index(t_node *stack_a, int value);
-void				ft_medium_algo(t_node **stack_a, t_node **stack_b);
-void				sort_three(t_node **stack_a);
+
+void				ft_push_to_b(t_node **stack_a, t_node **stack_b, int w, t_config *config);
+
+void				ft_push_to_a(t_node **stack_b, t_node **stack_a, t_config *config);
+void				ft_medium_algo(t_node **stack_a, t_node **stack_b, t_config *config);
+void				sort_three(t_node **stack_a, t_config *config);
 
 int					ft_find_max_bits(t_node **stack_a);
-void				complex_algo(t_node **stack_a, t_node **stack_b);
+void				complex_algo(t_node **stack_a, t_node **stack_b, t_config *config);
 
 float				compute_disorder(t_node *stack_a);
 void				ft_adaptive(t_node *stack_a, t_config *config);

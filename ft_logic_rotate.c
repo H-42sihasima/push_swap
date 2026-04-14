@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 13:22:06 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/21 17:08:05 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/14 14:48:07 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,26 @@ static void	ft_logic_rotate(t_node **stack)
 	last->next = first;
 }
 
-void	ra(t_node **a)
+void	ra(t_node **a, t_config *config)
 {
 	ft_logic_rotate(a);
 	write (1, "ra\n", 3);
+	if (config && config->bench_mode == 1)
+	{
+		config->count_ra++;
+		config->total_op++;
+	}
 }
 
-void	rb(t_node **b)
+void	rb(t_node **b, t_config *config)
 {
 	ft_logic_rotate(b);
 	write (1, "rb\n", 3);
+	if (config && config->bench_mode == 1)
+	{
+		config->count_rb++;
+		config->total_op++;
+	}
 }
 
 void	rr(t_node **a, t_node **b)
