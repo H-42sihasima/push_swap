@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/14 13:54:37 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/14 14:00:26 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ char				**ft_argv_to_tab(int argc, char **argv, int c);
 void				tab_to_stack(t_node **stack, int *tab, int taille);
 
 int					count_argv(int argc, char **argv, int c);
-t_node				*ft_stack(int argc, char **argv, t_node **stack_a);
+t_node				*ft_stack(int argc, char **array, t_node **stack_a);
 
 void				ft_short_simple(t_node **stack_a, t_node **stack_b);
 int					*ft_convert_tab(int argc, char **array, int size);

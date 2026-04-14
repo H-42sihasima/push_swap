@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/03 14:45:54 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/14 13:54:08 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/14 14:01:53 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ int	*ft_convert_tab(int argc, char **array, int size)
 
 int	*ft_tab(int argc, char **array, int size)
 {
-	int i;
-	int *tab;
+	int	i;
+	int	*tab;
 
 	i = 0;
 	tab = ft_convert_tab(argc, array, size);
