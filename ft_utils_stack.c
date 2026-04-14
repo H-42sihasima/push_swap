@@ -6,41 +6,41 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/14 17:08:14 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/11 13:45:33 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/14 12:09:30 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_lstadd_back(t_node **lst, t_node *new)
+void	ft_lstadd_back(t_node **stack, t_node *new)
 {
 	t_node	*ptr;
 
-	if (!new || !lst)
+	if (!new || !stack)
 		return ;
-	if (!*lst)
+	if (!*stack)
 	{
-		*lst = new;
+		*stack = new;
 		return ;
 	}
-	ptr = ft_lstlast(*lst);
+	ptr = ft_lstlast(*stack);
 	ptr->next = new;
 }
 
-void	ft_lstclear(t_node **lst)
+void	ft_lstclear(t_node **stack)
 {
 	t_node	*tmp;
 
-	if (!lst)
+	if (!stack)
 		return ;
-	tmp = *lst;
+	tmp = *stack;
 	while (tmp != NULL)
 	{
-		tmp = (*lst)->next;
-		free(*lst);
-		*lst = tmp;
+		tmp = (*stack)->next;
+		free(*stack);
+		*stack = tmp;
 	}
-	*lst = NULL;
+	*stack = NULL;
 }
 
 t_node	*ft_lstlast(t_node *stack_a)
