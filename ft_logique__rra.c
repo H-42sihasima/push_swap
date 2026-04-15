@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/02 13:29:39 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/14 14:50:06 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/15 08:57:09 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,14 @@ void	rrb(t_node **stack_b, t_config *config)
 	}
 }
 
-void	rrr(t_node **stack_a, t_node **stack_b)
+void	rrr(t_node **stack_a, t_node **stack_b, t_config *config)
 {
 	ft_logique_reverse_rotate(stack_a);
 	ft_logique_reverse_rotate(stack_b);
 	write(1, "rrr\n", 4);
+	if (config && config->bench_mode == 1)
+	{
+		config->count_rrr++;
+		config->total_op++;
+	}
 }

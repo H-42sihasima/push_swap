@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 12:55:20 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/13 15:46:43 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/15 11:00:53 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ void	ft_adaptive(t_node *stack_a, t_config *config)
 	if (!stack_a || !config)
 		return ;
 	disorder = compute_disorder(stack_a);
-	config->disorder = (double)disorder;
-	if (disorder < 0.2)
+	config->disorder = disorder;
+	if (disorder < 20)
 		config->strat = STRAT_SIMPLE;
-	else if (0.2 <= disorder && disorder < 0.5)
+	else if (20 <= disorder && disorder < 50)
 		config->strat = STRAT_MEDIUM;
 	else
 		config->strat = STRAT_COMPLEX;

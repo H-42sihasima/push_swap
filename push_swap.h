@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/14 15:56:52 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/15 08:59:03 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,10 @@ typedef struct s_strategy {
 	int		count_pb;
 	int		count_ra;
 	int		count_rb;
+	int		count_rr;
 	int		count_rra;
 	int		count_rrb;
+	int		count_rrr;
 	int		total_op;
 } t_config;
 
@@ -63,7 +65,7 @@ size_t				ft_strlen(const char *str);
 char				**ft_split(char const *s, char c);
 void				ra(t_node **a, t_config *config);
 void				rb(t_node **b, t_config *config);
-void				rr(t_node **a, t_node **b);
+void				rr(t_node **a, t_node **b, t_config *config);
 void				pa(t_node **stack_a, t_node **stack_b, t_config *t_config);
 void				pb(t_node **stack_b, t_node **stack_a, t_config *t_config);
 void				sa(t_node **stack_a, t_config *config);
@@ -71,7 +73,7 @@ void				sb(t_node **stack_b, t_config *config);
 void				ss(t_node **stack_a, t_node **stack_b, t_config *config);
 void				rra(t_node **stack_a, t_config *config);
 void				rrb(t_node **stack_b, t_config *config);
-void				rrr(t_node **stack_a, t_node **stack_b);
+void				rrr(t_node **stack_a, t_node **stack_b, t_config *config);
 
 long long			ft_atoi(char *arg);
 int					ft_check_atoi(long long arg);

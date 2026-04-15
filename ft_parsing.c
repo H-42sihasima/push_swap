@@ -6,13 +6,10 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/14 12:37:27 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/14 12:40:26 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/15 11:10:48 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*parse_input(int argc, char **argv)
-{
-	
-}
+

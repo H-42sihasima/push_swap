@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 11:04:10 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/11 12:30:38 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/15 17:41:40 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,24 @@ float	compute_disorder(t_node *stack_a)
 		}
 		current = current->next;
 	}
-	return ((float)mistakes / (float)total_pairs);
+	if (total_pairs == 0.0)
+		return (0.0);
+	return (((float)mistakes / (float)total_pairs) * 100);
+}
+
+void	aff_disorder(t_node *stack_a, int fd)
+{
+	int		number;
+	int 	fractional;
+	float	n;
+
+	n = compute_disorder(stack_a);
+	number = (int)n;
+	ft_putnbr_fd(number, fd);
+	ft_putchar_fd('.', fd);
+	fractional = (int)(n * 100) % 100;
+	if (fractional < 10)
+		ft_putchar_fd('0', fd);
+	ft_putnbr_fd(fractional, fd);
+	ft_putstr_fd("%\n", fd);
 }
