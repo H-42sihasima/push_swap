@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_benchmark.c                                     :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 09:52:24 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/16 11:24:47 by sihasima         ###   ########.fr       */
+/*   Created: 2026/01/19 11:58:10 by sihasima          #+#    #+#             */
+/*   Updated: 2026/03/03 10:34:40 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-char *benchmark(t_node *stack_a, t_config *config, int total_opp)
+size_t	ft_strlen(const char *str)
 {
-	ft_putstr_fd("[bench] disorder: ", 1);
-	aff_disorder(stack_a, 1);
-	ft_putstr_fd("\n[bench] strategy: ", 1);
-	aff_strategy(stack_a, config);
-	ft_putstr_fd("\n[bench] total_opp: ", 1);
-	ft_putnbr_fd(total_opp, 1);
+	unsigned int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }

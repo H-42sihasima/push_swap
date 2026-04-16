@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_benchmark.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 09:52:24 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/16 11:24:47 by sihasima         ###   ########.fr       */
+/*   Created: 2026/02/19 14:14:41 by sihasima          #+#    #+#             */
+/*   Updated: 2026/03/03 11:29:09 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-char *benchmark(t_node *stack_a, t_config *config, int total_opp)
+int	ft_putnbr_base(unsigned int nbr, char *base)
 {
-	ft_putstr_fd("[bench] disorder: ", 1);
-	aff_disorder(stack_a, 1);
-	ft_putstr_fd("\n[bench] strategy: ", 1);
-	aff_strategy(stack_a, config);
-	ft_putstr_fd("\n[bench] total_opp: ", 1);
-	ft_putnbr_fd(total_opp, 1);
+	unsigned int	count;
+
+	count = 0;
+	if (nbr >= 16)
+		count += ft_putnbr_base(nbr / 16, base);
+	count += ft_putchar(base[nbr % 16]);
+	return (count);
 }

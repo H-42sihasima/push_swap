@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_benchmark.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 09:52:24 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/16 11:24:47 by sihasima         ###   ########.fr       */
+/*   Created: 2026/01/30 12:16:59 by sihasima          #+#    #+#             */
+/*   Updated: 2026/03/03 11:19:54 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-char *benchmark(t_node *stack_a, t_config *config, int total_opp)
+int	ft_putnbr(int n)
 {
-	ft_putstr_fd("[bench] disorder: ", 1);
-	aff_disorder(stack_a, 1);
-	ft_putstr_fd("\n[bench] strategy: ", 1);
-	aff_strategy(stack_a, config);
-	ft_putstr_fd("\n[bench] total_opp: ", 1);
-	ft_putnbr_fd(total_opp, 1);
+	long	nb;
+	int		count;
+	char	c;
+
+	count = 0;
+	nb = (long)n;
+	if (n == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return (11);
+	}
+	if (nb < 0)
+	{
+		count += ft_putchar('-');
+		nb = nb * (-1);
+	}
+	if (nb >= 10)
+		count += ft_putnbr(nb / 10);
+	c = (nb % 10) + '0';
+	count += ft_putchar(c);
+	return (count);
 }

@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_benchmark.c                                     :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/16 09:52:24 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/16 11:24:47 by sihasima         ###   ########.fr       */
+/*   Created: 2026/02/19 13:21:56 by sihasima          #+#    #+#             */
+/*   Updated: 2026/03/03 11:38:27 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-char *benchmark(t_node *stack_a, t_config *config, int total_opp)
-{
-	ft_putstr_fd("[bench] disorder: ", 1);
-	aff_disorder(stack_a, 1);
-	ft_putstr_fd("\n[bench] strategy: ", 1);
-	aff_strategy(stack_a, config);
-	ft_putstr_fd("\n[bench] total_opp: ", 1);
-	ft_putnbr_fd(total_opp, 1);
-}
+# include <stdarg.h>
+# include <stdlib.h>
+# include <unistd.h>
+
+int				ft_printf(const char *str, ...);
+int				ft_putchar(char c);
+int				ft_putnbr(int n);
+int				ft_putstr(const char *s);
+int				ft_putptr(void *ptr);
+int				ft_putunbr(unsigned long n);
+size_t			ft_strlen(const char *str);
+int				ft_putnbr_base(unsigned int nbr, char *base);
+
+#endif
