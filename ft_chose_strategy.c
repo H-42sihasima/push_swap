@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_aff_strategy.c                                  :+:      :+:    :+:   */
+/*   ft_chose_strategy.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/16 09:44:15 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/16 09:47:10 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/16 11:32:29 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void	strategy(int argc, char **argv, t_config *config)
 
 	if (!stack_a || !stack_b)
 		return (0);
-	// disorder = compute_disorder(stack_a);
 	stack_a = ft_stack(argc, argv, a);
 	init_config(config);
 	if (config->strat = STRAT_ADAPTIVE)

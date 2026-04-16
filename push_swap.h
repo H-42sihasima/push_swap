@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/16 11:31:23 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/16 11:36:45 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,5 +111,7 @@ void				ft_adaptive(t_node *stack_a, t_config *config);
 
 t_node				*parse_input(int argc, char **argv);
 
+void				strategy(int argc, char **argv, t_config *config);
 void				aff_strategy(t_node *stack_a, t_config *config);
+
 #endif
