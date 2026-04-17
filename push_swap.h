@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/16 11:36:45 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/16 17:36:43 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,13 @@ typedef struct s_strategy {
 	int		count_rrr;
 	int		total_op;
 } t_config;
+
+typedef struct s_data
+{
+	t_node *stack_a;
+	t_node	*stack_b;
+} t_data;
+
 
 void				init_config(t_config *config);
 
@@ -111,6 +118,8 @@ void				ft_adaptive(t_node *stack_a, t_config *config);
 
 t_node				*parse_input(int argc, char **argv);
 
+int					ft_printf(const char *str, ...);
+void 				aff_bench(t_node *stack_a, t_config *config);
 void				strategy(int argc, char **argv, t_config *config);
 void				aff_strategy(t_node *stack_a, t_config *config);
 
