@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/31 13:34:18 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/14 15:56:17 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/17 17:12:53 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_check_digit(char *arg)
 	}
 	while (arg[i])
 	{
-		if (!(arg[i] >= '0' && arg[i] <= '9'))
+		if (!((arg[i] >= '0' && arg[i] <= '9') || arg[i] == "--simple" || arg[i] == "--medium" || arg[i] == "--complex" || arg[i] == "--adaptive"))
 			aff_error(arg);
 		i++;
 	}

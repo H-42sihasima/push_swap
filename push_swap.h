@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/17 14:25:35 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/17 16:16:49 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,7 @@ t_node				*parse_input(int argc, char **argv);
 
 int					ft_printf(const char *str, ...);
 void 				aff_bench(t_node *stack_a, t_config *config);
+void				chose_method(int argc, char **argv, t_config *config);
 void				strategy(int argc, char **argv, t_config *config);
 void				aff_strategy(t_node *stack_a, t_config *config);
 
