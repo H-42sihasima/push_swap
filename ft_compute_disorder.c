@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 11:04:10 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/17 14:16:30 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/17 15:32:07 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	aff_disorder(t_node *stack_a, int fd)
 	int 	fractional;
 	float	n;
 
-	n = compute_disorder(stack_a);
+	n = compute_disorder(stack_a) * 100;
 	number = (int)n;
 	ft_putnbr_fd(number, fd);
 	ft_putchar_fd('.', fd);

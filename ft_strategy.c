@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 09:07:51 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/17 15:08:09 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/17 15:25:51 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ void	chose_method(int argc, char **argv, t_config *config)
 	config->strat = STRAT_ADAPTIVE;
 	while (i < argc)
 	{
-		if (ft_strcmp(argv[i], "--") == 0)
-			config->strat = STRAT_ADAPTIVE;
-		else if (argv[i][0] == '-' &&  argv[i][1] == '-')
+		// if (ft_strcmp(argv[i], "--") == 0)
+		// 	config->strat = STRAT_ADAPTIVE;
+		if (argv[i][0] == '-' &&  argv[i][1] == '-')
 		{
 			if (config->strat == STRAT_ADAPTIVE)
 			{
