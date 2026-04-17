@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:28:37 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/16 17:36:43 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/17 14:25:35 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ char				**ft_split(char const *s, char c);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 size_t				ft_strlen(const char *str);
 char				**ft_split(char const *s, char c);
+int					ft_strcmp(char *s1, char *s2);
 void				ra(t_node **a, t_config *config);
 void				rb(t_node **b, t_config *config);
 void				rr(t_node **a, t_node **b, t_config *config);
@@ -113,7 +114,7 @@ int					ft_find_max_bits(t_node **stack_a);
 void				complex_algo(t_node **stack_a, t_node **stack_b, t_config *config);
 
 float				compute_disorder(t_node *stack_a);
-float				aff_disorder(t_node *stack_a, int fd);
+void				aff_disorder(t_node *stack_a, int fd);
 void				ft_adaptive(t_node *stack_a, t_config *config);
 
 t_node				*parse_input(int argc, char **argv);

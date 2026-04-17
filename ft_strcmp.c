@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/13 15:49:20 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/17 14:41:45 by sihasima         ###   ########.fr       */
+/*   Created: 2026/04/17 14:20:08 by sihasima          #+#    #+#             */
+/*   Updated: 2026/04/17 14:25:05 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-int main(int argc, char **argv)
+
+int	ft_strcmp(char *s1, char *s2)
 {
-	/*le parsing et autre...*/
-	t_config *config;
-	t_node 	**a;
-	t_node	**stack_a;
-	t_node	*stack_b;
-	int		disorder;
+	size_t i;
 
-	if (!stack_a || !stack_b)
-		return (0);
-	stack_a = ft_stack(argc, argv, a);
-	init_config(config);
-	strategy(argc, argv, config);
-
+	i = 0;
+	while (s1[i] || s2[i])
+	{
+		if (s1[i] != s2[i])
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
+	}
+	return (0);
 }

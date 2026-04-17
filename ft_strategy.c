@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/15 09:07:51 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/16 17:36:10 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/17 15:08:09 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	aff_strategy(t_node *stack_a, t_config *config)
 {
 	float	disorder;
 
-	disorder = aff_disorder(stack_a, 1);
+	disorder = compute_disorder(stack_a);
 	if (config->strat == STRAT_SIMPLE)
 		ft_putstr_fd("Simple / O(n²)\n", 1);
 	else if (config->strat == STRAT_MEDIUM)
@@ -25,9 +25,9 @@ void	aff_strategy(t_node *stack_a, t_config *config)
 		ft_putstr_fd("Complex / O(n log n)\n", 1);
 	else if(config->strat == STRAT_ADAPTIVE)
 	{
-		if (disorder < 20)
+		if (disorder < 0.2)
 			ft_putstr_fd("Adaptive / O(n²)\n", 1);
-		else if (20 <= disorder && disorder < 50)
+		else if (0.2 <= disorder && disorder < 0.5)
 			ft_putstr_fd("Adaptive / O(n\xe2\x88\x9an)\n", 1);
 		else
 			ft_putstr_fd("Adaptive / O(n log n)\n", 1);
