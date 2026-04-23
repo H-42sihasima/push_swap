@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_arg.c                                     :+:      :+:    :+:   */
+/*   is_number.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/21 09:41:59 by pkolonan          #+#    #+#             */
-/*   Updated: 2026/04/23 17:00:54 by sihasima         ###   ########.fr       */
+/*   Created: 2026/04/17 07:09:26 by pkolonan          #+#    #+#             */
+/*   Updated: 2026/04/23 11:29:25 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_check_arg(char **arg, int count)
+int	is_number(char *str)
 {
-	int i;
+	int	i;
 
+	if (!str)
+		return (0);
 	i = 0;
-	while (i < count)
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (is_number(arg[i]))
-			i++;
-		else if (ft_strcmp(arg[i], "--simple") == 0)
-			i++;
-		else if (ft_strcmp(arg[i], "--medium") == 0)
-			i++;
-		else if (ft_strcmp(arg[i], "--complex") == 0)
-			i++;
-		else if (ft_strcmp(arg[i], "--adaptive") == 0)
-			i++;
-		else if (ft_strcmp(arg[i], "--bench") == 0)
+		if ((str[i + 1] >= '0' && str[i + 1] <= '9'))
 			i++;
 		else
+			aff_error(str);
+	}
+	while (str[i] != '\0')
+	{
+		if (!(str[i] >= '0' && str[i] <= '9'))
 			return (0);
+		i++;
 	}
 	return (1);
 }

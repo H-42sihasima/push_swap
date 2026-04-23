@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_arg.c                                     :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/21 09:41:59 by pkolonan          #+#    #+#             */
-/*   Updated: 2026/04/23 17:00:54 by sihasima         ###   ########.fr       */
+/*   Created: 2026/04/20 16:06:44 by pkolonan          #+#    #+#             */
+/*   Updated: 2026/04/23 16:30:39 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_check_arg(char **arg, int count)
+long	ft_atol(char *str)
 {
-	int i;
+	int		i;
+	int		j;
+	long	result;
 
+	if (!str)
+		return (0);
 	i = 0;
-	while (i < count)
+	while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
+		i++;
+	j = 1;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		if (is_number(arg[i]))
-			i++;
-		else if (ft_strcmp(arg[i], "--simple") == 0)
-			i++;
-		else if (ft_strcmp(arg[i], "--medium") == 0)
-			i++;
-		else if (ft_strcmp(arg[i], "--complex") == 0)
-			i++;
-		else if (ft_strcmp(arg[i], "--adaptive") == 0)
-			i++;
-		else if (ft_strcmp(arg[i], "--bench") == 0)
-			i++;
-		else
-			return (0);
+		if (str[i] == '-')
+			j = -1;
+		i++;
 	}
-	return (1);
+	result = 0;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		result = (result * 10) + (str[i] - '0');
+		i++;
+	}
+	return ((result * j));
 }

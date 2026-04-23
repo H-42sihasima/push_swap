@@ -1,38 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_arg.c                                     :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/21 09:41:59 by pkolonan          #+#    #+#             */
-/*   Updated: 2026/04/23 17:00:54 by sihasima         ###   ########.fr       */
+/*   Created: 2026/04/14 13:01:23 by pkolonan          #+#    #+#             */
+/*   Updated: 2026/04/23 17:37:52 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_check_arg(char **arg, int count)
+void	free_stack(t_stack **stack)
+{
+	t_stack *temp;
+
+	if (!stack || !*stack)
+		return ;
+
+	while (*stack)
+	{
+		temp = (*stack)->next;
+		free(*stack);
+		*stack = temp;
+	}
+}
+
+char	**ft_free(char **array, int count)
 {
 	int i;
 
 	i = 0;
 	while (i < count)
 	{
-		if (is_number(arg[i]))
-			i++;
-		else if (ft_strcmp(arg[i], "--simple") == 0)
-			i++;
-		else if (ft_strcmp(arg[i], "--medium") == 0)
-			i++;
-		else if (ft_strcmp(arg[i], "--complex") == 0)
-			i++;
-		else if (ft_strcmp(arg[i], "--adaptive") == 0)
-			i++;
-		else if (ft_strcmp(arg[i], "--bench") == 0)
-			i++;
-		else
-			return (0);
+		free(array[i]);
+		i++;
 	}
-	return (1);
+	free(array);
+	return (NULL);
+}
+
+void aff_error(char *arg)
+{
+	write(2, "Error\n", 6);
+	exit(1);
+}
+
+void exit_and_clean(char **array, t_stack *stack_a, int i)
+{
+	ft_free(array, i);
+	free(stack_a);
+	write(2, "Error\n", 5);
+	exit(1);
 }

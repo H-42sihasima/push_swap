@@ -1,38 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_arg.c                                     :+:      :+:    :+:   */
+/*   check_limits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/04/21 09:41:59 by pkolonan          #+#    #+#             */
-/*   Updated: 2026/04/23 17:00:54 by sihasima         ###   ########.fr       */
+/*   Created: 2026/04/20 15:39:47 by pkolonan          #+#    #+#             */
+/*   Updated: 2026/04/23 17:03:25 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int ft_check_arg(char **arg, int count)
+int	check_limits(long valeur)
 {
-	int i;
 
-	i = 0;
-	while (i < count)
-	{
-		if (is_number(arg[i]))
-			i++;
-		else if (ft_strcmp(arg[i], "--simple") == 0)
-			i++;
-		else if (ft_strcmp(arg[i], "--medium") == 0)
-			i++;
-		else if (ft_strcmp(arg[i], "--complex") == 0)
-			i++;
-		else if (ft_strcmp(arg[i], "--adaptive") == 0)
-			i++;
-		else if (ft_strcmp(arg[i], "--bench") == 0)
-			i++;
-		else
-			return (0);
-	}
+	if (valeur < -2147483648 || valeur > 2147483647)
+		return (0);
 	return (1);
 }
+
