@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/11 11:04:10 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/17 15:32:07 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/25 17:14:24 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,12 @@ float	compute_disorder(t_node *stack_a)
 	return (((float)mistakes / (float)total_pairs));
 }
 
-void	aff_disorder(t_node *stack_a, int fd)
+void	aff_disorder(float n, int fd)
 {
-	int		number;
-	int 	fractional;
-	float	n;
+	int	number;
+	int	fractional;
 
-	n = compute_disorder(stack_a) * 100;
+	n = n * 100;
 	number = (int)n;
 	ft_putnbr_fd(number, fd);
 	ft_putchar_fd('.', fd);
@@ -55,6 +54,5 @@ void	aff_disorder(t_node *stack_a, int fd)
 	if (fractional < 10)
 		ft_putchar_fd('0', fd);
 	ft_putnbr_fd(fractional, fd);
-	ft_putstr_fd("%%", fd);
+	ft_putstr_fd("%", fd);
 }
-

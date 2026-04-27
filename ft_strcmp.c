@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/17 14:20:08 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/17 14:25:05 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/25 17:15:46 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strcmp(char *s1, char *s2)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (s1[i] || s2[i])

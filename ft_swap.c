@@ -26,22 +26,22 @@ static void	ft_swap(t_node **stack)
 void	sa(t_node **stack_a, t_config *config)
 {
 	ft_swap(stack_a);
-	write (1, "sa\n", 3);
+	write(1, "sa\n", 3);
 	if (config && config->bench_mode == 1)
 	{
 		config->count_sa++;
-		config->total_op++;
+		config->total_ops++;
 	}
 }
 
 void	sb(t_node **stack_b, t_config *config)
 {
 	ft_swap(stack_b);
-	write (1, "sb\n", 3);
+	write(1, "sb\n", 3);
 	if (config && config->bench_mode == 1)
 	{
 		config->count_sb++;
-		config->total_op++;
+		config->total_ops++;
 	}
 }
 
@@ -49,10 +49,10 @@ void	ss(t_node **stack_a, t_node **stack_b, t_config *config)
 {
 	ft_swap(stack_a);
 	ft_swap(stack_b);
-	write (1, "ss\n", 3);
+	write(1, "ss\n", 3);
 	if (config && config->bench_mode == 1)
 	{
 		config->count_ss++;
-		config->total_op++;
+		config->total_ops++;
 	}
 }

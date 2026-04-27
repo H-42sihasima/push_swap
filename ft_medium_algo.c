@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/24 16:53:08 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/14 17:14:00 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/25 17:00:08 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_find_max(t_node **stack_a)
 	return (max);
 }
 
-static void	ft_bring_to_top(t_node **stack_a, int valeur_max, t_config *config)
+static void	ft_bring_to_top(t_node **stack_a, int max_value, t_config *config)
 {
 	int	taille;
 	int	mid;
@@ -40,9 +40,9 @@ static void	ft_bring_to_top(t_node **stack_a, int valeur_max, t_config *config)
 		return ;
 	taille = ft_lstsize(*stack_a);
 	mid = taille / 2;
-	while ((*stack_a)->content != valeur_max)
+	while ((*stack_a)->content != max_value)
 	{
-		index_max = ft_get_index(*stack_a, valeur_max);
+		index_max = ft_get_index(*stack_a, max_value);
 		if (index_max <= mid)
 			ra(stack_a, config);
 		else
@@ -50,7 +50,8 @@ static void	ft_bring_to_top(t_node **stack_a, int valeur_max, t_config *config)
 	}
 }
 
-void	ft_push_to_b(t_node **stack_a, t_node **stack_b, int w, t_config *config)
+void	ft_push_to_b(t_node **stack_a, t_node **stack_b, int w,
+		t_config *config)
 {
 	int	i;
 	int	indice;
@@ -59,7 +60,7 @@ void	ft_push_to_b(t_node **stack_a, t_node **stack_b, int w, t_config *config)
 		return ;
 	ft_assign_indexation(stack_a);
 	i = 0;
-	while (ft_lstsize(*stack_a) > 3)
+	while (*stack_a != NULL)
 	{
 		indice = (*stack_a)->index;
 		if (indice <= i)
@@ -76,7 +77,6 @@ void	ft_push_to_b(t_node **stack_a, t_node **stack_b, int w, t_config *config)
 		else
 			ra(stack_a, config);
 	}
-	sort_three(stack_a, config);
 }
 
 void	ft_push_to_a(t_node **stack_b, t_node **stack_a, t_config *config)
@@ -96,9 +96,16 @@ void	ft_push_to_a(t_node **stack_b, t_node **stack_a, t_config *config)
 void	ft_medium_algo(t_node **stack_a, t_node **stack_b, t_config *config)
 {
 	int	w;
+	int	size;
 
 	if (!stack_a || !*stack_a || !stack_b || !config)
 		return ;
+	size = ft_lstsize(*stack_a);
+	if (size <= 5)
+	{
+		sorted_five(stack_a, stack_b, config);
+		return ;
+	}
 	w = ft_calcule_w(stack_a);
 	ft_push_to_b(stack_a, stack_b, w, config);
 	ft_push_to_a(stack_b, stack_a, config);

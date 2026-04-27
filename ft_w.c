@@ -1,26 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_W.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/13 17:58:57 by sihasima          #+#    #+#             */
-/*   Updated: 2026/02/14 11:05:38 by sihasima         ###   ########.fr       */
+/*   Created: 2026/03/24 16:05:47 by sihasima          #+#    #+#             */
+/*   Updated: 2026/04/11 13:35:28 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+static int	ft_sqrt(int nbr)
 {
-	size_t			i;
+	int	i;
 
-	i = 0;
-	while (i < n)
+	i = 1;
+	while (i * i <= nbr)
 	{
-		((unsigned char *)s)[i] = (unsigned char)c;
+		if (i * i == nbr)
+			return (i);
 		i++;
 	}
-	return ((void *)s);
+	return (i - 1);
+}
+
+int	ft_calcule_w(t_node **stack_a)
+{
+	float	coef;
+	int		size;
+	int		w;
+
+	if (!stack_a || !*stack_a)
+		return (0);
+	coef = 1.5;
+	size = ft_lstsize(*stack_a);
+	w = (int)(ft_sqrt(size) * coef);
+	return (w);
 }

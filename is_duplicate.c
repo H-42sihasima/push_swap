@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   is_duplicate.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/19 11:58:10 by sihasima          #+#    #+#             */
-/*   Updated: 2026/03/03 10:34:40 by sihasima         ###   ########.fr       */
+/*   Created: 2026/04/25 11:22:07 by sihasima          #+#    #+#             */
+/*   Updated: 2026/04/25 11:24:06 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "push_swap.h"
 
-size_t	ft_strlen(const char *str)
+int	is_duplicate(t_node *stack_a, int val)
 {
-	unsigned int	i;
-
-	i = 0;
-	while (str[i] != '\0')
+	while (stack_a != NULL)
 	{
-		i++;
+		if (stack_a->content == val)
+			return (1);
+		stack_a = stack_a->next;
 	}
-	return (i);
+	return (0);
 }

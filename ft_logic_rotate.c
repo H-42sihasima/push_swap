@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/11 13:22:06 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/15 08:54:49 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/25 17:06:29 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ra(t_node **a, t_config *config)
 	if (config && config->bench_mode == 1)
 	{
 		config->count_ra++;
-		config->total_op++;
+		config->total_ops++;
 	}
 }
 
@@ -46,7 +46,7 @@ void	rb(t_node **b, t_config *config)
 	if (config && config->bench_mode == 1)
 	{
 		config->count_rb++;
-		config->total_op++;
+		config->total_ops++;
 	}
 }
 
@@ -58,6 +58,6 @@ void	rr(t_node **a, t_node **b, t_config *config)
 	if (config && config->bench_mode == 1)
 	{
 		config->count_rr++;
-		config->total_op++;
+		config->total_ops++;
 	}
 }

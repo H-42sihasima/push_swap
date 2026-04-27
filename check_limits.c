@@ -6,17 +6,15 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/20 15:39:47 by pkolonan          #+#    #+#             */
-/*   Updated: 2026/04/23 17:03:25 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/25 17:09:11 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_limits(long valeur)
+int	check_limits(long value)
 {
-
-	if (valeur < -2147483648 || valeur > 2147483647)
+	if (value < -2147483648 || value > 2147483647)
 		return (0);
 	return (1);
 }
-

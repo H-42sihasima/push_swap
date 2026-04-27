@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/28 12:29:17 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/14 15:27:09 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/25 17:00:20 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int	ft_find_max_bits(t_node **stack_a)
 	return (bits);
 }
 
-static void	utils(t_node **stack_a, t_node **stack_b, int max_bits, t_config *config)
+static void	utils(t_node **stack_a, t_node **stack_b, int max_bits,
+		t_config *config)
 {
 	int	j;
 	int	i;
@@ -58,9 +59,17 @@ static void	utils(t_node **stack_a, t_node **stack_b, int max_bits, t_config *co
 void	complex_algo(t_node **stack_a, t_node **stack_b, t_config *config)
 {
 	int	max_bits;
+	int	size;
 
 	if (!stack_a || !*stack_a || !stack_b || !config)
 		return ;
+	size = ft_lstsize(*stack_a);
+	if (size <= 5)
+	{
+		sorted_five(stack_a, stack_b, config);
+		return ;
+	}
+	ft_assign_indexation(stack_a);
 	max_bits = ft_find_max_bits(stack_a);
 	utils(stack_a, stack_b, max_bits, config);
 }

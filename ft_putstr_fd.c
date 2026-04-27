@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/16 15:47:11 by sihasima          #+#    #+#             */
-/*   Updated: 2026/02/16 15:47:18 by sihasima         ###   ########.fr       */
+/*   Created: 2026/02/04 16:12:26 by sihasima          #+#    #+#             */
+/*   Updated: 2026/04/25 11:51:51 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_isalnum(int c)
+void	ft_putstr_fd(char *s, int fd)
 {
-	if ((c >= 48 && c <= 57) || (c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-		return (1);
-	return (0);
+	int	i;
+
+	i = 0;
+	if (fd < 0)
+		return ;
+	while (s[i] != '\0')
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
 }

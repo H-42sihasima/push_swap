@@ -6,7 +6,7 @@
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/19 13:49:22 by sihasima          #+#    #+#             */
-/*   Updated: 2026/04/14 15:26:35 by sihasima         ###   ########.fr       */
+/*   Updated: 2026/04/25 13:55:17 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,21 @@ int	ft_get_index(t_node *stack_a, int value)
 	t_node	*tmp;
 
 	if (!stack_a)
-	return (0);
+		return (0);
 	tmp = stack_a;
 	index = 0;
 	while (tmp != NULL)
 	{
 		if (tmp->content == value)
-		return (index);
+			return (index);
 		tmp = tmp->next;
 		index++;
 	}
 	return (0);
 }
 
-void	bring_to_top(t_node **stack_a, int min_value, int index, t_config *config)
+void	bring_to_top(t_node **stack_a, int min_value, int index,
+		t_config *config)
 {
 	int	taille;
 	int	mid;
@@ -58,13 +59,12 @@ void	bring_to_top(t_node **stack_a, int min_value, int index, t_config *config)
 		return ;
 	taille = ft_lstsize(*stack_a);
 	mid = taille / 2;
-	while ((*stack_a)->content != min_value)
-	{
-		if (index <= mid)
+	if (index <= mid)
+		while ((*stack_a)->content != min_value)
 			ra(stack_a, config);
-		else
+	else
+		while ((*stack_a)->content != min_value)
 			rra(stack_a, config);
-	}
 }
 
 void	sort_three(t_node **stack_a, t_config *config)
@@ -103,6 +103,8 @@ void	ft_short_simple(t_node **stack_a, t_node **stack_b, t_config *config)
 	{
 		bring_to_top(stack_a, min_value, index, config);
 		pb(stack_a, stack_b, config);
+		min_value = ft_find_min(*stack_a);
+		index = ft_get_index(*stack_a, min_value);
 		stack_len--;
 	}
 	sort_three(stack_a, config);

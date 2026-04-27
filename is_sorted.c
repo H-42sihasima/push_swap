@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/23 15:40:27 by sihasima          #+#    #+#             */
-/*   Updated: 2026/01/23 16:16:18 by sihasima         ###   ########.fr       */
+/*   Created: 2026/04/16 12:40:39 by pkolonan          #+#    #+#             */
+/*   Updated: 2026/04/25 17:12:49 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	is_sorted(t_node **stack_a)
 {
-	unsigned char	*nw1;
-	unsigned char	*nw2;
-	size_t			i;
+	t_node	*new;
 
-	nw1 = (unsigned char *)s1;
-	nw2 = (unsigned char *)s2;
-	i = 0;
-	while (i < n)
+	if (!stack_a)
+		return (0);
+	new = *stack_a;
+	while (new->next != NULL)
 	{
-		if (nw1[i] != nw2[i])
-			return (nw1[i] - nw2[i]);
-		i++;
+		if (new->content > (new->next->content))
+			return (0);
+		else
+			new = new->next;
 	}
-	return (0);
+	return (1);
 }

@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   is_flags.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sihasima <sihasima@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/23 13:24:02 by sihasima          #+#    #+#             */
-/*   Updated: 2026/02/12 16:10:45 by sihasima         ###   ########.fr       */
+/*   Created: 2026/04/21 09:41:59 by pkolonan          #+#    #+#             */
+/*   Updated: 2026/04/25 17:11:41 by sihasima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-char	*ft_strdup(const char *s)
+int	is_flags(char *arg)
 {
-	char	*tab;
-	char	*array;
-	size_t	i;
-
-	tab = (char *)s;
-	array = (char *)malloc(sizeof(char) * (ft_strlen(tab) + 1));
-	if (array == NULL)
-		return (NULL);
-	i = 0;
-	while (tab[i] != '\0')
-	{
-		*(array + i) = *(tab + i);
-		i++;
-	}
-	array[i] = '\0';
-	return (array);
+	if (ft_strcmp(arg, "--simple") == 0)
+		return (1);
+	else if (ft_strcmp(arg, "--medium") == 0)
+		return (1);
+	else if (ft_strcmp(arg, "--complex") == 0)
+		return (1);
+	else if (ft_strcmp(arg, "--adaptive") == 0)
+		return (1);
+	else if (ft_strcmp(arg, "--bench") == 0)
+		return (1);
+	else
+		return (0);
 }
